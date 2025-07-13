@@ -1,0 +1,417 @@
+2025-07-13 13:53:37 | ERROR | __main__:main:271 | 程序运行失败: OpenAIModel.__init__() got an unexpected keyword argument 'api_key'
+2025-07-13 13:54:19 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 13:54:19 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 13:54:19 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 13:54:19 | INFO | time_planner.mcp_client:__init__:46 | MCP 客户端初始化: mcp-server-sequential-thinking
+2025-07-13 13:54:19 | INFO | time_planner.mcp_client:__init__:242 | Sequential Thinking 客户端初始化完成
+2025-07-13 13:54:19 | INFO | time_planner.mcp_client:__init__:364 | MCP 管理器初始化完成
+2025-07-13 13:54:19 | ERROR | __main__:main:271 | 程序运行失败: Error generating schema for TimeManagementAgent._register_tools.<locals>.parse_task_description:
+  First parameter of tools that take context must be annotated with RunContext[...]
+2025-07-13 14:00:16 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:00:16 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:00:16 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:00:16 | INFO | time_planner.mcp_client:__init__:46 | MCP 客户端初始化: mcp-server-sequential-thinking
+2025-07-13 14:00:16 | INFO | time_planner.mcp_client:__init__:242 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:00:16 | INFO | time_planner.mcp_client:__init__:364 | MCP 管理器初始化完成
+2025-07-13 14:00:16 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:00:16 | ERROR | time_planner.mcp_client:start_server:84 | 启动 MCP 服务器失败: [WinError 2] 系统找不到指定的文件。
+2025-07-13 14:00:16 | ERROR | time_planner.mcp_client:initialize:378 | MCP 服务器启动失败
+2025-07-13 14:00:16 | ERROR | time_planner.agent:initialize:74 | MCP 服务初始化失败
+2025-07-13 14:00:16 | INFO | time_planner.mcp_client:shutdown:404 | MCP 服务已关闭
+2025-07-13 14:00:16 | INFO | time_planner.agent:shutdown:93 | Agent 已关闭
+2025-07-13 14:07:20 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:07:20 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:07:20 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:07:20 | INFO | time_planner.mcp_client:__init__:78 | MCP 客户端初始化: mcp-server-sequential-thinking
+2025-07-13 14:07:20 | INFO | time_planner.mcp_client:__init__:274 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:07:20 | INFO | time_planner.mcp_client:__init__:395 | MCP 管理器初始化完成，使用命令: mcp-server-sequential-thinking
+2025-07-13 14:07:20 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:07:20 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:07:20 | ERROR | time_planner.mcp_client:start_server:116 | 启动 MCP 服务器失败: [WinError 2] 系统找不到指定的文件。
+2025-07-13 14:07:20 | ERROR | time_planner.mcp_client:initialize:409 | MCP 服务器启动失败
+2025-07-13 14:07:20 | WARNING | time_planner.agent:initialize:81 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 14:07:20 | INFO | time_planner.agent:initialize:84 | Agent 初始化完成
+2025-07-13 14:08:12 | INFO | time_planner.agent:process_user_request:384 | 处理用户请求: 你好呀
+2025-07-13 14:08:12 | WARNING | time_planner.agent:_thinking_chain_process:426 | 思维链客户端未初始化，跳过思维链处理
+2025-07-13 14:08:17 | INFO | time_planner.agent:process_user_request:405 | 用户请求处理完成
+2025-07-13 14:10:57 | INFO | time_planner.agent:process_user_request:384 | 处理用户请求: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的时候我希望玩会儿游戏，不过我必须要花一个小时以上来敲代码，我希望干完之后再玩游戏，然后睡觉，帮我安排下时间
+2025-07-13 14:10:57 | WARNING | time_planner.agent:_thinking_chain_process:426 | 思维链客户端未初始化，跳过思维链处理
+2025-07-13 14:11:04 | INFO | time_planner.agent:parse_task_description:150 | 解析任务描述: 五点左右去吃饭，大概半个小时多吃完，然后休息一下。
+2025-07-13 14:11:04 | INFO | time_planner.agent:parse_task_description:150 | 解析任务描述: 去洗个澡，大概需要花一个小时。
+2025-07-13 14:11:04 | INFO | time_planner.agent:parse_task_description:212 | 任务解析结果: {'title': '五点左右去吃饭，大概半个小时多吃完，然后...', 'duration_minutes': 60, 'priority': 'medium', 'task_type': 'flexible', 'deadline': None, 'keywords': []}
+2025-07-13 14:11:04 | INFO | time_planner.agent:parse_task_description:150 | 解析任务描述: 花一个小时以上来敲代码。
+2025-07-13 14:11:04 | INFO | time_planner.agent:parse_task_description:212 | 任务解析结果: {'title': '去洗个澡，大概需要花一个小时。', 'duration_minutes': 60, 'priority': 'medium', 'task_type': 'flexible', 'deadline': None, 'keywords': []}
+2025-07-13 14:11:04 | INFO | time_planner.agent:parse_task_description:150 | 解析任务描述: 玩会儿游戏。
+2025-07-13 14:11:04 | INFO | time_planner.agent:parse_task_description:212 | 任务解析结果: {'title': '花一个小时以上来敲代码。', 'duration_minutes': 60, 'priority': 'medium', 'task_type': 'flexible', 'deadline': None, 'keywords': []}
+2025-07-13 14:11:04 | INFO | time_planner.agent:parse_task_description:212 | 任务解析结果: {'title': '玩会儿游戏。', 'duration_minutes': 60, 'priority': 'medium', 'task_type': 'flexible', 'deadline': None, 'keywords': []}
+2025-07-13 14:11:18 | INFO | time_planner.services:create_slot:81 | 创建时间段: 吃饭 (2023-11-01 17:00:00 - 2023-11-01 17:30:00)
+2025-07-13 14:11:18 | INFO | time_planner.services:create_slot:81 | 创建时间段: 休息 (2023-11-01 17:30:00 - 2023-11-01 18:00:00)
+2025-07-13 14:11:18 | INFO | time_planner.services:create_slot:81 | 创建时间段: 洗澡 (2023-11-01 18:00:00 - 2023-11-01 19:00:00)
+2025-07-13 14:11:18 | INFO | time_planner.services:create_slot:81 | 创建时间段: 敲代码 (2023-11-01 19:00:00 - 2023-11-01 20:00:00)
+2025-07-13 14:11:18 | INFO | time_planner.services:create_slot:81 | 创建时间段: 玩游戏 (2023-11-01 20:00:00 - 2023-11-01 21:00:00)
+2025-07-13 14:11:27 | INFO | time_planner.agent:process_user_request:405 | 用户请求处理完成
+2025-07-13 14:11:46 | INFO | time_planner.agent:process_user_request:384 | 处理用户请求: 你调用了哪些工具吗
+2025-07-13 14:11:46 | WARNING | time_planner.agent:_thinking_chain_process:426 | 思维链客户端未初始化，跳过思维链处理
+2025-07-13 14:11:51 | INFO | time_planner.agent:process_user_request:405 | 用户请求处理完成
+2025-07-13 14:12:39 | INFO | time_planner.mcp_client:shutdown:435 | MCP 服务已关闭
+2025-07-13 14:12:39 | INFO | time_planner.agent:shutdown:96 | Agent 已关闭
+2025-07-13 14:12:45 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:12:45 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:12:45 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:12:45 | INFO | time_planner.mcp_client:__init__:82 | MCP 客户端初始化: mcp-server-sequential-thinking
+2025-07-13 14:12:45 | INFO | time_planner.mcp_client:__init__:278 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:12:45 | INFO | time_planner.mcp_client:__init__:399 | MCP 管理器初始化完成，使用命令: mcp-server-sequential-thinking
+2025-07-13 14:12:45 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:12:45 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:12:45 | ERROR | time_planner.mcp_client:start_server:120 | 启动 MCP 服务器失败: [WinError 2] 系统找不到指定的文件。
+2025-07-13 14:12:45 | ERROR | time_planner.mcp_client:initialize:413 | MCP 服务器启动失败
+2025-07-13 14:12:45 | WARNING | time_planner.agent:initialize:81 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 14:12:45 | INFO | time_planner.agent:initialize:84 | Agent 初始化完成
+2025-07-13 14:12:50 | INFO | time_planner.mcp_client:shutdown:439 | MCP 服务已关闭
+2025-07-13 14:12:50 | INFO | time_planner.agent:shutdown:96 | Agent 已关闭
+2025-07-13 14:21:17 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:21:17 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:21:17 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:21:17 | INFO | time_planner.mcp_client:__init__:396 | 使用本地 MCP 服务器
+2025-07-13 14:21:17 | INFO | time_planner.mcp_client:__init__:82 | MCP 客户端初始化: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:21:17 | INFO | time_planner.mcp_client:__init__:278 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:21:17 | INFO | time_planner.mcp_client:__init__:406 | MCP 管理器初始化完成，使用命令: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:21:17 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:21:17 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:21:17 | INFO | time_planner.mcp_client:start_server:107 | MCP 服务器启动成功
+2025-07-13 14:21:28 | WARNING | time_planner.mcp_client:send_request:221 | MCP 请求超时: method=tools/list
+2025-07-13 14:21:28 | INFO | time_planner.mcp_client:stop_server:131 | MCP 服务器已停止
+2025-07-13 14:21:28 | ERROR | time_planner.mcp_client:initialize:420 | MCP 服务器启动失败
+2025-07-13 14:21:28 | WARNING | time_planner.agent:initialize:81 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 14:21:28 | INFO | time_planner.agent:initialize:84 | Agent 初始化完成
+2025-07-13 14:21:50 | INFO | time_planner.mcp_client:shutdown:446 | MCP 服务已关闭
+2025-07-13 14:21:50 | INFO | time_planner.agent:shutdown:96 | Agent 已关闭
+2025-07-13 14:21:55 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:21:55 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:21:55 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:21:55 | INFO | time_planner.mcp_client:__init__:396 | 使用本地 MCP 服务器
+2025-07-13 14:21:55 | INFO | time_planner.mcp_client:__init__:82 | MCP 客户端初始化: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:21:55 | INFO | time_planner.mcp_client:__init__:278 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:21:55 | INFO | time_planner.mcp_client:__init__:406 | MCP 管理器初始化完成，使用命令: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:21:55 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:21:55 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:21:55 | INFO | time_planner.mcp_client:start_server:107 | MCP 服务器启动成功
+2025-07-13 14:22:06 | WARNING | time_planner.mcp_client:send_request:221 | MCP 请求超时: method=tools/list
+2025-07-13 14:22:06 | INFO | time_planner.mcp_client:stop_server:131 | MCP 服务器已停止
+2025-07-13 14:22:06 | ERROR | time_planner.mcp_client:initialize:420 | MCP 服务器启动失败
+2025-07-13 14:22:06 | WARNING | time_planner.agent:initialize:81 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 14:22:06 | INFO | time_planner.agent:initialize:84 | Agent 初始化完成
+2025-07-13 14:23:36 | INFO | time_planner.mcp_client:shutdown:446 | MCP 服务已关闭
+2025-07-13 14:23:36 | INFO | time_planner.agent:shutdown:96 | Agent 已关闭
+2025-07-13 14:33:38 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:33:38 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:33:38 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:33:38 | INFO | time_planner.mcp_client:__init__:401 | 使用本地 MCP 服务器
+2025-07-13 14:33:38 | INFO | time_planner.mcp_client:__init__:74 | MCP 客户端初始化: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:33:38 | INFO | time_planner.mcp_client:__init__:283 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:33:38 | INFO | time_planner.mcp_client:__init__:411 | MCP 管理器初始化完成，使用命令: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:33:38 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:33:38 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:33:38 | INFO | time_planner.mcp_client:start_server:99 | MCP 服务器启动成功
+2025-07-13 14:33:41 | INFO | time_planner.mcp_client:_test_connection:157 | MCP连接测试 第1次尝试...
+2025-07-13 14:33:56 | WARNING | time_planner.mcp_client:send_request:226 | MCP 请求超时: method=tools/list
+2025-07-13 14:33:56 | WARNING | time_planner.mcp_client:_test_connection:164 | MCP连接测试失败，尝试 1/3
+2025-07-13 14:33:58 | INFO | time_planner.mcp_client:_test_connection:157 | MCP连接测试 第2次尝试...
+2025-07-13 14:34:13 | WARNING | time_planner.mcp_client:send_request:226 | MCP 请求超时: method=tools/list
+2025-07-13 14:34:13 | WARNING | time_planner.mcp_client:_test_connection:164 | MCP连接测试失败，尝试 2/3
+2025-07-13 14:34:15 | INFO | time_planner.mcp_client:_test_connection:157 | MCP连接测试 第3次尝试...
+2025-07-13 14:34:30 | WARNING | time_planner.mcp_client:send_request:226 | MCP 请求超时: method=tools/list
+2025-07-13 14:34:30 | WARNING | time_planner.mcp_client:_test_connection:164 | MCP连接测试失败，尝试 3/3
+2025-07-13 14:34:30 | ERROR | time_planner.mcp_client:_test_connection:172 | MCP连接测试最终失败
+2025-07-13 14:34:30 | INFO | time_planner.mcp_client:stop_server:123 | MCP 服务器已停止
+2025-07-13 14:34:30 | ERROR | time_planner.mcp_client:initialize:425 | MCP 服务器启动失败
+2025-07-13 14:34:30 | WARNING | time_planner.agent:initialize:81 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 14:34:30 | INFO | time_planner.agent:initialize:84 | Agent 初始化完成
+2025-07-13 14:37:12 | INFO | time_planner.mcp_client:shutdown:451 | MCP 服务已关闭
+2025-07-13 14:37:12 | INFO | time_planner.agent:shutdown:96 | Agent 已关闭
+2025-07-13 14:38:56 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:38:56 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:38:56 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:38:56 | INFO | time_planner.mcp_client:__init__:475 | 使用本地 MCP 服务器
+2025-07-13 14:38:56 | INFO | time_planner.mcp_client:__init__:74 | MCP 客户端初始化: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:38:56 | INFO | time_planner.mcp_client:__init__:357 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:38:56 | INFO | time_planner.mcp_client:__init__:485 | MCP 管理器初始化完成，使用命令: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:38:56 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:38:56 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:38:56 | INFO | time_planner.mcp_client:start_server:99 | MCP 服务器启动成功
+2025-07-13 14:38:59 | INFO | time_planner.mcp_client:_initialize_mcp:283 | 开始 MCP 协议初始化...
+2025-07-13 14:39:14 | WARNING | time_planner.mcp_client:send_request:231 | MCP 请求超时: method=initialize
+2025-07-13 14:39:14 | ERROR | time_planner.mcp_client:_initialize_mcp:308 | MCP 初始化失败：无有效响应
+2025-07-13 14:39:14 | INFO | time_planner.mcp_client:stop_server:128 | MCP 服务器已停止
+2025-07-13 14:39:14 | ERROR | time_planner.mcp_client:initialize:499 | MCP 服务器启动失败
+2025-07-13 14:39:14 | WARNING | time_planner.agent:initialize:81 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 14:39:14 | INFO | time_planner.agent:initialize:84 | Agent 初始化完成
+2025-07-13 14:41:06 | INFO | time_planner.mcp_client:shutdown:525 | MCP 服务已关闭
+2025-07-13 14:41:06 | INFO | time_planner.agent:shutdown:96 | Agent 已关闭
+2025-07-13 14:41:19 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:41:19 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:41:19 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:41:19 | INFO | time_planner.mcp_client:__init__:483 | 使用本地 MCP 服务器
+2025-07-13 14:41:19 | INFO | time_planner.mcp_client:__init__:74 | MCP 客户端初始化: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:41:19 | INFO | time_planner.mcp_client:__init__:365 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:41:19 | INFO | time_planner.mcp_client:__init__:493 | MCP 管理器初始化完成，使用命令: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:41:19 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:41:19 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:41:19 | INFO | time_planner.mcp_client:start_server:99 | MCP 服务器启动成功
+2025-07-13 14:41:22 | INFO | time_planner.mcp_client:_initialize_mcp:291 | 开始 MCP 协议初始化...
+2025-07-13 14:41:22 | INFO | time_planner.mcp_client:send_request:221 | 发送 MCP 请求: initialize (ID: 1)
+2025-07-13 14:41:37 | WARNING | time_planner.mcp_client:send_request:239 | MCP 请求超时: method=initialize, timeout=15.0s
+2025-07-13 14:41:37 | ERROR | time_planner.mcp_client:_initialize_mcp:316 | MCP 初始化失败：无有效响应
+2025-07-13 14:41:37 | INFO | time_planner.mcp_client:stop_server:128 | MCP 服务器已停止
+2025-07-13 14:41:37 | ERROR | time_planner.mcp_client:initialize:507 | MCP 服务器启动失败
+2025-07-13 14:41:37 | WARNING | time_planner.agent:initialize:81 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 14:41:37 | INFO | time_planner.agent:initialize:84 | Agent 初始化完成
+2025-07-13 14:44:48 | INFO | time_planner.mcp_client:shutdown:533 | MCP 服务已关闭
+2025-07-13 14:44:48 | INFO | time_planner.agent:shutdown:96 | Agent 已关闭
+2025-07-13 14:46:28 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:46:28 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:46:28 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:46:28 | INFO | time_planner.mcp_client:__init__:481 | 使用本地 MCP 服务器
+2025-07-13 14:46:28 | INFO | time_planner.mcp_client:__init__:74 | MCP 客户端初始化: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:46:28 | INFO | time_planner.mcp_client:__init__:363 | Sequential Thinking 客户端初始化完成
+2025-07-13 14:46:28 | INFO | time_planner.mcp_client:__init__:491 | MCP 管理器初始化完成，使用命令: node D:\programming\AIManageTime\sequentialthinking\dist\index.js
+2025-07-13 14:46:28 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:46:28 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:46:28 | INFO | time_planner.mcp_client:start_server:99 | MCP 服务器启动成功
+2025-07-13 14:46:30 | INFO | time_planner.mcp_client:_initialize_mcp:292 | 开始 MCP 协议初始化...
+2025-07-13 14:46:30 | INFO | time_planner.mcp_client:send_request:222 | 发送 MCP 请求: initialize (ID: 1)
+2025-07-13 14:46:40 | WARNING | time_planner.mcp_client:send_request:240 | MCP 请求超时: method=initialize, timeout=10.0s
+2025-07-13 14:46:40 | ERROR | time_planner.mcp_client:_initialize_mcp:314 | MCP 初始化失败：无有效响应 - None
+2025-07-13 14:46:40 | INFO | time_planner.mcp_client:stop_server:128 | MCP 服务器已停止
+2025-07-13 14:46:40 | ERROR | time_planner.mcp_client:initialize:505 | MCP 服务器启动失败
+2025-07-13 14:46:40 | WARNING | time_planner.agent:initialize:81 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 14:46:40 | INFO | time_planner.agent:initialize:84 | Agent 初始化完成
+2025-07-13 14:50:31 | INFO | time_planner.mcp_client:shutdown:531 | MCP 服务已关闭
+2025-07-13 14:50:31 | INFO | time_planner.agent:shutdown:96 | Agent 已关闭
+2025-07-13 14:52:26 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:52:26 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:52:26 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:52:26 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:52:26 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:52:26 | INFO | time_planner.simple_mcp_client:start_and_initialize:25 | 启动 MCP 服务器...
+2025-07-13 14:52:28 | INFO | time_planner.simple_mcp_client:start_and_initialize:53 | 发送初始化请求...
+2025-07-13 14:52:28 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | MCP 初始化成功
+2025-07-13 14:52:28 | INFO | time_planner.simple_mcp_client:start_and_initialize:70 | 获取工具列表...
+2025-07-13 14:52:28 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | 获取到 1 个工具
+2025-07-13 14:52:28 | INFO | time_planner.agent:initialize:76 | MCP 思维链服务已启用
+2025-07-13 14:52:28 | INFO | time_planner.agent:initialize:81 | Agent 初始化完成
+2025-07-13 14:54:33 | INFO | time_planner.simple_mcp_client:stop:169 | MCP 服务器已停止
+2025-07-13 14:54:33 | INFO | time_planner.agent:shutdown:93 | Agent 已关闭
+2025-07-13 14:54:37 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 14:54:37 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 14:54:37 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 14:54:37 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 14:54:37 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 14:54:37 | INFO | time_planner.simple_mcp_client:start_and_initialize:25 | 启动 MCP 服务器...
+2025-07-13 14:54:39 | INFO | time_planner.simple_mcp_client:start_and_initialize:53 | 发送初始化请求...
+2025-07-13 14:54:39 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | MCP 初始化成功
+2025-07-13 14:54:39 | INFO | time_planner.simple_mcp_client:start_and_initialize:70 | 获取工具列表...
+2025-07-13 14:54:39 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | 获取到 1 个工具
+2025-07-13 14:54:39 | INFO | time_planner.agent:initialize:76 | MCP 思维链服务已启用
+2025-07-13 14:54:39 | INFO | time_planner.agent:initialize:81 | Agent 初始化完成
+2025-07-13 14:55:12 | INFO | time_planner.agent:process_user_request:385 | 处理用户请求: 你能用哪些工具？
+2025-07-13 14:55:12 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 1: 第一步：分析用户需求 - 你能用哪些工具？...
+2025-07-13 14:55:13 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 2: 第二步：识别任务要素（时间、优先级、类型等）...
+2025-07-13 14:55:13 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 3: 第三步：检查当前日程安排和可能的冲突...
+2025-07-13 14:55:13 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 4: 第四步：制定时间安排方案...
+2025-07-13 14:55:13 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 5: 第五步：评估方案合理性并进行优化...
+2025-07-13 14:55:13 | INFO | time_planner.agent:_thinking_chain_process:463 | 思维链处理完成，共 5 步
+2025-07-13 14:55:22 | INFO | time_planner.agent:process_user_request:406 | 用户请求处理完成
+2025-07-13 14:57:40 | INFO | time_planner.agent:process_user_request:385 | 处理用户请求: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的时候我希望玩会儿游戏，不过我必须要花一个小时以上来敲代码，我希望干完之后再玩游戏，然后睡觉，帮我安排下时间
+2025-07-13 14:57:40 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 1: 第一步：分析用户需求 - 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，...
+2025-07-13 14:57:40 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 2: 第二步：识别任务要素（时间、优先级、类型等）...
+2025-07-13 14:57:40 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 3: 第三步：检查当前日程安排和可能的冲突...
+2025-07-13 14:57:40 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 4: 第四步：制定时间安排方案...
+2025-07-13 14:57:40 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 5: 第五步：评估方案合理性并进行优化...
+2025-07-13 15:05:38 | INFO | time_planner.simple_mcp_client:stop:169 | MCP 服务器已停止
+2025-07-13 15:05:38 | INFO | time_planner.agent:shutdown:93 | Agent 已关闭
+2025-07-13 15:05:45 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 15:05:45 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 15:05:45 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 15:05:45 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 15:05:45 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 15:05:45 | INFO | time_planner.simple_mcp_client:start_and_initialize:25 | 启动 MCP 服务器...
+2025-07-13 15:05:47 | INFO | time_planner.simple_mcp_client:start_and_initialize:53 | 发送初始化请求...
+2025-07-13 15:05:47 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | MCP 初始化成功
+2025-07-13 15:05:47 | INFO | time_planner.simple_mcp_client:start_and_initialize:70 | 获取工具列表...
+2025-07-13 15:05:47 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | 获取到 1 个工具
+2025-07-13 15:05:47 | INFO | time_planner.agent:initialize:76 | MCP 思维链服务已启用
+2025-07-13 15:05:47 | INFO | time_planner.agent:initialize:81 | Agent 初始化完成
+2025-07-13 15:05:50 | INFO | time_planner.agent:process_user_request:385 | 处理用户请求: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的时候我希望玩会儿游戏，不过我必须要花一个小时以上来敲代码，我希望干完之后再玩游戏，然后睡觉，帮我安排下时间
+2025-07-13 15:05:50 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 1: 第一步：分析用户需求 - 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，...
+2025-07-13 15:05:50 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 2: 第二步：识别任务要素（时间、优先级、类型等）...
+2025-07-13 15:05:50 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 3: 第三步：检查当前日程安排和可能的冲突...
+2025-07-13 15:05:50 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 4: 第四步：制定时间安排方案...
+2025-07-13 15:05:50 | INFO | time_planner.agent:_thinking_chain_process:453 | 执行思维步骤 5: 第五步：评估方案合理性并进行优化...
+2025-07-13 15:05:50 | INFO | time_planner.agent:_thinking_chain_process:463 | 思维链处理完成，共 5 步
+2025-07-13 15:05:57 | INFO | time_planner.agent:parse_task_description:149 | 解析任务描述: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的时候我希望玩会儿游戏，不过我必须要花一个小时以上来敲代码，我希望干完之后再玩游戏，然后睡觉，帮我安排下时间
+2025-07-13 15:05:57 | INFO | time_planner.agent:parse_task_description:211 | 任务解析结果: {'title': '我今天大概五点左右去吃饭，大概半个小时多...', 'duration_minutes': 60, 'priority': 'medium', 'task_type': 'flexible', 'deadline': '今天', 'keywords': []}
+2025-07-13 15:06:14 | INFO | time_planner.services:create_slot:81 | 创建时间段: 吃饭 (2023-11-02 17:00:00 - 2023-11-02 17:30:00)
+2025-07-13 15:06:14 | INFO | time_planner.services:create_slot:81 | 创建时间段: 休息 (2023-11-02 17:30:00 - 2023-11-02 18:00:00)
+2025-07-13 15:06:14 | INFO | time_planner.services:create_slot:81 | 创建时间段: 洗澡 (2023-11-02 18:00:00 - 2023-11-02 19:00:00)
+2025-07-13 15:06:14 | INFO | time_planner.services:create_slot:81 | 创建时间段: 敲代码 (2023-11-02 19:00:00 - 2023-11-02 20:00:00)
+2025-07-13 15:06:14 | INFO | time_planner.services:create_slot:81 | 创建时间段: 玩游戏 (2023-11-02 20:00:00 - 2023-11-02 21:00:00)
+2025-07-13 15:06:24 | INFO | time_planner.agent:process_user_request:406 | 用户请求处理完成
+2025-07-13 15:18:19 | INFO | time_planner.simple_mcp_client:stop:169 | MCP 服务器已停止
+2025-07-13 15:18:19 | INFO | time_planner.agent:shutdown:93 | Agent 已关闭
+2025-07-13 15:56:47 | INFO | time_planner.services:__init__:37 | 时间段服务初始化完成
+2025-07-13 15:56:47 | INFO | time_planner.services:__init__:164 | 日程服务初始化完成
+2025-07-13 15:56:47 | INFO | time_planner.services:__init__:262 | 时间规划服务初始化完成
+2025-07-13 15:56:47 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 15:56:47 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 15:56:47 | INFO | time_planner.simple_mcp_client:start_and_initialize:25 | 启动 MCP 服务器...
+2025-07-13 15:56:49 | INFO | time_planner.simple_mcp_client:start_and_initialize:53 | 发送初始化请求...
+2025-07-13 15:56:49 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | MCP 初始化成功
+2025-07-13 15:56:49 | INFO | time_planner.simple_mcp_client:start_and_initialize:70 | 获取工具列表...
+2025-07-13 15:56:49 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | 获取到 1 个工具
+2025-07-13 15:56:49 | INFO | time_planner.agent:initialize:76 | MCP 思维链服务已启用
+2025-07-13 15:56:49 | INFO | time_planner.agent:initialize:81 | Agent 初始化完成
+2025-07-13 15:57:18 | INFO | time_planner.agent:process_user_request:854 | 处理用户请求: 帮我调用 Agent 工具，生成晚上吃饭洗澡学习游戏的计划安排
+2025-07-13 15:57:18 | INFO | time_planner.agent:_thinking_chain_process:901 | 快速分析用户需求: 帮我调用 Agent 工具，生成晚上吃饭洗澡学习游戏的计划安排...
+2025-07-13 15:57:18 | INFO | time_planner.agent:_thinking_chain_process:910 | 思维链快速分析完成
+2025-07-13 15:57:25 | INFO | time_planner.agent:create_time_schedule_from_description:434 | 根据描述创建时间安排: 生成晚上吃饭洗澡学习游戏的计划安排
+2025-07-13 15:57:36 | INFO | time_planner.agent:process_user_request:875 | 用户请求处理完成
+2025-07-13 15:58:34 | INFO | time_planner.agent:process_user_request:854 | 处理用户请求: 都行
+2025-07-13 15:58:34 | INFO | time_planner.agent:_thinking_chain_process:901 | 快速分析用户需求: 都行...
+2025-07-13 15:58:34 | INFO | time_planner.agent:_thinking_chain_process:910 | 思维链快速分析完成
+2025-07-13 15:58:39 | INFO | time_planner.agent:process_user_request:875 | 用户请求处理完成
+2025-07-13 16:01:27 | INFO | time_planner.simple_mcp_client:stop:176 | MCP 服务器已停止
+2025-07-13 16:01:27 | INFO | time_planner.agent:shutdown:93 | Agent 已关闭
+2025-07-13 16:05:38 | INFO | time_planner.services:_load_from_file:75 | 时间段数据文件 time_slots.json 不存在，将创建新文件
+2025-07-13 16:05:38 | INFO | time_planner.services:__init__:41 | 时间段服务初始化完成
+2025-07-13 16:05:38 | INFO | time_planner.services:__init__:232 | 日程服务初始化完成
+2025-07-13 16:05:38 | INFO | time_planner.services:__init__:330 | 时间规划服务初始化完成
+2025-07-13 16:05:38 | INFO | time_planner.agent:__init__:67 | 时间管理 Agent 初始化完成
+2025-07-13 16:05:38 | INFO | time_planner.agent:initialize:73 | 正在初始化 MCP 服务...
+2025-07-13 16:05:38 | INFO | time_planner.simple_mcp_client:start_and_initialize:25 | 启动 MCP 服务器...
+2025-07-13 16:05:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:53 | 发送初始化请求...
+2025-07-13 16:05:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | MCP 初始化成功
+2025-07-13 16:05:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:70 | 获取工具列表...
+2025-07-13 16:05:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | 获取到 1 个工具
+2025-07-13 16:05:40 | INFO | time_planner.agent:initialize:76 | MCP 思维链服务已启用
+2025-07-13 16:05:40 | INFO | time_planner.agent:initialize:81 | Agent 初始化完成
+2025-07-13 16:09:57 | INFO | time_planner.agent:process_user_request:854 | 处理用户请求: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的时候我希望玩会儿游戏，不过我必须要花一个小时以上来敲代码，我希望干完之后再玩游戏，然后睡觉，帮我安排下时间
+2025-07-13 16:09:57 | INFO | time_planner.agent:_thinking_chain_process:901 | 快速分析用户需求: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的...
+2025-07-13 16:09:57 | INFO | time_planner.agent:_thinking_chain_process:910 | 思维链快速分析完成
+2025-07-13 16:10:04 | INFO | time_planner.agent:parse_task_description:192 | 解析任务描述: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的时候我希望玩会儿游戏，不过我必须要花一个小时以上来敲代码，我希望干完之后再玩游戏，然后睡觉，帮我安排下时间
+2025-07-13 16:10:04 | INFO | time_planner.agent:parse_task_description:254 | 任务解析结果: {'title': '我今天大概五点左右去吃饭，大概半个小时多...', 'duration_minutes': 60, 'priority': 'medium', 'task_type': 'flexible', 'deadline': '今天', 'keywords': []}
+2025-07-13 16:10:14 | INFO | time_planner.agent:create_time_schedule_from_description:434 | 根据描述创建时间安排: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的时候我希望玩会儿游戏，不过我必须要花一个小时以上来敲代码，我希望干完之后再玩游戏，然后睡觉，帮我安排下时间
+2025-07-13 16:10:14 | INFO | time_planner.services:create_slot:146 | 创建时间段: 吃饭 (2023-11-03 17:00:00 - 2023-11-03 17:30:00)
+2025-07-13 16:10:14 | INFO | time_planner.services:_save_to_file:100 | 保存了 1 个时间段到 time_slots.json
+2025-07-13 16:10:14 | INFO | time_planner.agent:create_time_schedule_from_description:549 | 创建时间段: 吃饭 (17:00 - 17:30)
+2025-07-13 16:10:14 | INFO | time_planner.services:create_slot:146 | 创建时间段: 休息 (2023-11-03 17:30:00 - 2023-11-03 18:00:00)
+2025-07-13 16:10:14 | INFO | time_planner.services:_save_to_file:100 | 保存了 2 个时间段到 time_slots.json
+2025-07-13 16:10:14 | INFO | time_planner.agent:create_time_schedule_from_description:549 | 创建时间段: 休息 (17:30 - 18:00)
+2025-07-13 16:10:14 | INFO | time_planner.services:create_slot:146 | 创建时间段: 洗澡 (2023-11-03 18:00:00 - 2023-11-03 19:00:00)
+2025-07-13 16:10:14 | INFO | time_planner.services:_save_to_file:100 | 保存了 3 个时间段到 time_slots.json
+2025-07-13 16:10:14 | INFO | time_planner.agent:create_time_schedule_from_description:549 | 创建时间段: 洗澡 (18:00 - 19:00)
+2025-07-13 16:10:14 | INFO | time_planner.services:create_slot:146 | 创建时间段: 敲代码 (2023-11-03 19:00:00 - 2023-11-03 20:30:00)
+2025-07-13 16:10:14 | INFO | time_planner.services:_save_to_file:100 | 保存了 4 个时间段到 time_slots.json
+2025-07-13 16:10:14 | INFO | time_planner.agent:create_time_schedule_from_description:549 | 创建时间段: 敲代码 (19:00 - 20:30)
+2025-07-13 16:10:14 | INFO | time_planner.services:create_slot:146 | 创建时间段: 玩游戏 (2023-11-03 20:30:00 - 2023-11-03 21:30:00)
+2025-07-13 16:10:14 | INFO | time_planner.services:_save_to_file:100 | 保存了 5 个时间段到 time_slots.json
+2025-07-13 16:10:14 | INFO | time_planner.agent:create_time_schedule_from_description:549 | 创建时间段: 玩游戏 (20:30 - 21:30)
+2025-07-13 16:10:26 | INFO | time_planner.agent:process_user_request:875 | 用户请求处理完成
+2025-07-13 16:10:48 | INFO | time_planner.agent:process_user_request:854 | 处理用户请求: 查看一下我的全部时间安排
+2025-07-13 16:10:48 | INFO | time_planner.agent:_thinking_chain_process:901 | 快速分析用户需求: 查看一下我的全部时间安排...
+2025-07-13 16:10:48 | INFO | time_planner.agent:_thinking_chain_process:910 | 思维链快速分析完成
+2025-07-13 16:11:06 | INFO | time_planner.agent:process_user_request:875 | 用户请求处理完成
+2025-07-13 16:16:03 | INFO | time_planner.agent:process_user_request:854 | 处理用户请求: 根据我的时间安排，你能给我什么建议呢
+2025-07-13 16:16:03 | INFO | time_planner.agent:_thinking_chain_process:901 | 快速分析用户需求: 根据我的时间安排，你能给我什么建议呢...
+2025-07-13 16:16:03 | INFO | time_planner.agent:_thinking_chain_process:910 | 思维链快速分析完成
+2025-07-13 16:16:10 | INFO | time_planner.agent:process_user_request:875 | 用户请求处理完成
+2025-07-13 16:16:43 | INFO | time_planner.agent:process_user_request:854 | 处理用户请求: 我希望能多玩一些，根据我的时间安排，你能给我什么建议呢
+2025-07-13 16:16:43 | INFO | time_planner.agent:_thinking_chain_process:901 | 快速分析用户需求: 我希望能多玩一些，根据我的时间安排，你能给我什么建议呢...
+2025-07-13 16:16:43 | INFO | time_planner.agent:_thinking_chain_process:910 | 思维链快速分析完成
+2025-07-13 16:16:54 | INFO | time_planner.agent:process_user_request:875 | 用户请求处理完成
+2025-07-13 16:17:12 | INFO | time_planner.agent:process_user_request:854 | 处理用户请求: 是的
+2025-07-13 16:17:12 | INFO | time_planner.agent:_thinking_chain_process:901 | 快速分析用户需求: 是的...
+2025-07-13 16:17:12 | INFO | time_planner.agent:_thinking_chain_process:910 | 思维链快速分析完成
+2025-07-13 16:17:17 | INFO | time_planner.agent:process_user_request:875 | 用户请求处理完成
+2025-07-13 16:18:13 | INFO | time_planner.simple_mcp_client:stop:176 | MCP 服务器已停止
+2025-07-13 16:18:13 | INFO | time_planner.agent:shutdown:93 | Agent 已关闭
+2025-07-13 17:14:38 | INFO | time_planner.services:_load_from_file:70 | 从 time_slots.json 加载了 8 个时间段
+2025-07-13 17:14:38 | INFO | time_planner.services:__init__:41 | 时间段服务初始化完成
+2025-07-13 17:14:38 | INFO | time_planner.services:__init__:239 | 日程服务初始化完成
+2025-07-13 17:14:38 | INFO | time_planner.services:__init__:337 | 时间规划服务初始化完成
+2025-07-13 17:14:38 | INFO | time_planner.memory:_load_memory:317 | 从 conversation_memory.json 加载了 52 条历史记录
+2025-07-13 17:14:38 | INFO | time_planner.memory:__init__:106 | 对话记忆管理器初始化完成，加载了 52 条历史记录
+2025-07-13 17:14:38 | INFO | time_planner.agent:__init__:76 | 时间管理 Agent 初始化完成
+2025-07-13 17:14:38 | INFO | time_planner.agent:initialize:82 | 正在初始化 MCP 服务...
+2025-07-13 17:14:38 | INFO | time_planner.simple_mcp_client:start_and_initialize:25 | 启动 MCP 服务器...
+2025-07-13 17:14:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:53 | 发送初始化请求...
+2025-07-13 17:14:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | MCP 初始化成功
+2025-07-13 17:14:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:70 | 获取工具列表...
+2025-07-13 17:14:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | 获取到 1 个工具
+2025-07-13 17:14:40 | INFO | time_planner.agent:initialize:85 | MCP 思维链服务已启用
+2025-07-13 17:14:40 | INFO | time_planner.agent:initialize:90 | Agent 初始化完成
+2025-07-13 17:14:56 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 请问我目前需要做哪些事情呀
+2025-07-13 17:14:56 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 请问我目前需要做哪些事情呀...
+2025-07-13 17:14:56 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:15:19 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:16:20 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 我希望把所有的任务都提前到今天干完，你觉得时间应该怎么安排
+2025-07-13 17:16:20 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 我希望把所有的任务都提前到今天干完，你觉得时间应该怎么安排...
+2025-07-13 17:16:20 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:16:49 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:17:45 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 请帮我调整更改!
+2025-07-13 17:17:45 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 请帮我调整更改!...
+2025-07-13 17:17:45 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:17:53 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:18:30 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 你具有记忆功能吗？可以看到上文我的要求吗
+2025-07-13 17:18:30 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 你具有记忆功能吗？可以看到上文我的要求吗...
+2025-07-13 17:18:30 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:18:39 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:18:59 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 我们是第几次对话
+2025-07-13 17:18:59 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 我们是第几次对话...
+2025-07-13 17:18:59 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:19:12 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:22:19 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 上文我问了你什么
+2025-07-13 17:22:19 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 上文我问了你什么...
+2025-07-13 17:22:19 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:22:32 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:23:15 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 我希望把明天的安排转移到今天来，我该怎么做？
+2025-07-13 17:23:15 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 我希望把明天的安排转移到今天来，我该怎么做？...
+2025-07-13 17:23:15 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:23:25 | INFO | time_planner.services:query_slots_by_range:328 | 查询到 0 个时间段
+2025-07-13 17:23:25 | INFO | time_planner.services:query_slots_by_range:328 | 查询到 0 个时间段
+2025-07-13 17:23:32 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:23:59 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 我的任务安排是什么
+2025-07-13 17:23:59 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 我的任务安排是什么...
+2025-07-13 17:23:59 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:24:19 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:24:50 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 我的名字叫做派蒙
+2025-07-13 17:24:50 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 我的名字叫做派蒙...
+2025-07-13 17:24:50 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:24:56 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:25:10 | INFO | time_planner.agent:process_user_request:955 | 处理用户请求: 我的名字叫做什么
+2025-07-13 17:25:10 | INFO | time_planner.agent:_thinking_chain_process:1045 | 快速分析用户需求: 我的名字叫做什么...
+2025-07-13 17:25:10 | INFO | time_planner.agent:_thinking_chain_process:1054 | 思维链快速分析完成
+2025-07-13 17:25:16 | INFO | time_planner.agent:process_user_request:1009 | 用户请求处理完成
+2025-07-13 17:30:32 | INFO | time_planner.simple_mcp_client:stop:176 | MCP 服务器已停止
+2025-07-13 17:30:32 | INFO | time_planner.agent:shutdown:102 | Agent 已关闭
+2025-07-13 19:19:34 | INFO | time_planner.services:_load_from_file:75 | 时间段数据文件 time_slots.json 不存在，将创建新文件
+2025-07-13 19:19:34 | INFO | time_planner.services:__init__:41 | 时间段服务初始化完成
+2025-07-13 19:19:34 | INFO | time_planner.services:__init__:239 | 日程服务初始化完成
+2025-07-13 19:19:34 | INFO | time_planner.services:__init__:337 | 时间规划服务初始化完成
+2025-07-13 19:19:34 | INFO | time_planner.memory:_load_memory:344 | 从 conversation_memory.json 加载了 10 条历史记录
+2025-07-13 19:19:34 | INFO | time_planner.memory:__init__:106 | 对话记忆管理器初始化完成，加载了 10 条历史记录
+2025-07-13 19:19:34 | INFO | time_planner.agent:__init__:88 | 时间管理 Agent 初始化完成
+2025-07-13 19:19:34 | INFO | time_planner.agent:initialize:94 | 正在初始化 MCP 服务...
+2025-07-13 19:19:34 | INFO | time_planner.simple_mcp_client:start_and_initialize:25 | 启动 MCP 服务器...
+2025-07-13 19:19:36 | INFO | time_planner.simple_mcp_client:start_and_initialize:53 | 发送初始化请求...
+2025-07-13 19:19:36 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | MCP 初始化成功
+2025-07-13 19:19:36 | INFO | time_planner.simple_mcp_client:start_and_initialize:70 | 获取工具列表...
+2025-07-13 19:19:36 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | 获取到 1 个工具
+2025-07-13 19:19:36 | INFO | time_planner.agent:initialize:97 | MCP 思维链服务已启用
+2025-07-13 19:19:36 | INFO | time_planner.agent:initialize:102 | Agent 初始化完成
+2025-07-13 19:20:18 | INFO | time_planner.agent:process_user_request:1034 | 处理用户请求: 我今天大概五点左右去吃饭，大概半个小时多吃完，然后休息一下。之后去洗个澡，大概需要花一个小时。晚上的时候我希望玩会儿游戏，不过我必须要花一个小时以上来敲代码，我希望干完之后再玩游戏，然后睡觉，帮我安排下时间
+2025-07-13 19:20:18 | ERROR | time_planner.agent:process_user_request:1122 | 处理用户请求失败: local variable 'content' referenced before assignment
+2025-07-13 19:21:15 | INFO | time_planner.agent:process_user_request:1034 | 处理用户请求: 我喜欢吃月饼
+2025-07-13 19:21:15 | ERROR | time_planner.agent:process_user_request:1122 | 处理用户请求失败: local variable 'content' referenced before assignment
+2025-07-13 19:29:13 | INFO | time_planner.simple_mcp_client:stop:176 | MCP 服务器已停止
+2025-07-13 19:29:13 | INFO | time_planner.agent:shutdown:114 | Agent 已关闭
