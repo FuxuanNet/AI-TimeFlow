@@ -27,7 +27,9 @@ from pathlib import Path
 project_root = Path(__file__).parent
 sys.path.insert(0, str(project_root))
 
-from time_planner.cli import main as cli_main
+from time_planner.new_cli import main as new_cli_main
+from time_planner.new_agent import NewTimeManagementAgent
+from time_planner.new_services import TimeManagementService
 from loguru import logger
 
 
@@ -149,38 +151,28 @@ def check_mcp_server():
 async def run_interactive_mode():
     """运行交互模式"""
     print("🚀 启动交互模式...")
-    await cli_main()
+    await new_cli_main()
 
 
 async def run_demo_mode():
     """运行演示模式"""
     print("🎯 演示模式")
 
-    # 导入必要的模块
     try:
-        from time_planner import get_agent, initialize_agent, shutdown_agent
-        from time_planner.models import UserPreferences
+        print("\\n正在初始化新时间管理系统...")
 
-        print("\\n正在初始化系统...")
-
-        # 初始化 Agent
-        if not initialize_agent():
-            print("❌ 系统初始化失败")
-            return
+        # 初始化服务和 Agent
+        time_service = TimeManagementService()
+        agent = NewTimeManagementAgent(time_service)
 
         print("✅ 系统初始化成功")
-
-        # 创建默认用户偏好
-        preferences = UserPreferences()
-
-        # 获取 Agent 实例
-        agent = get_agent()
 
         # 演示一些基本功能
         demo_requests = [
             "我明天上午需要学习数学2小时，请帮我安排",
+            "现在几点了？",
             "查看我今天的日程安排",
-            "我下周有个项目要完成，需要安排15小时的工作时间",
+            "我下周有个项目要完成，需要安排学习时间",
         ]
 
         print("\\n🎯 开始演示...")
@@ -191,7 +183,7 @@ async def run_demo_mode():
             print("AI处理中...")
 
             try:
-                response = await agent.process_user_request(request, preferences)
+                response = await agent.process_user_request(request)
                 print(f"AI回复: {response}")
             except Exception as e:
                 print(f"处理失败: {e}")
@@ -201,11 +193,21 @@ async def run_demo_mode():
 
         print("\\n🎉 演示完成！")
 
+        # 显示统计信息
+        stats = time_service.get_statistics()
+        print("\\n📊 系统统计:")
+        for key, value in stats.items():
+            print(f"  {key}: {value}")
+
     except Exception as e:
         logger.error(f"演示模式失败: {e}")
         print(f"❌ 演示失败: {e}")
     finally:
-        shutdown_agent()
+        print("\\n🔄 清理资源...")
+        try:
+            await agent.shutdown()
+        except:
+            pass
 
 
 def main():

@@ -415,3 +415,32 @@
 2025-07-13 19:21:15 | ERROR | time_planner.agent:process_user_request:1122 | 处理用户请求失败: local variable 'content' referenced before assignment
 2025-07-13 19:29:13 | INFO | time_planner.simple_mcp_client:stop:176 | MCP 服务器已停止
 2025-07-13 19:29:13 | INFO | time_planner.agent:shutdown:114 | Agent 已关闭
+2025-07-13 19:29:46 | INFO | time_planner.services:_load_from_file:75 | 时间段数据文件 time_slots.json 不存在，将创建新文件
+2025-07-13 19:29:46 | INFO | time_planner.services:__init__:41 | 时间段服务初始化完成
+2025-07-13 19:29:46 | INFO | time_planner.services:__init__:239 | 日程服务初始化完成
+2025-07-13 19:29:46 | INFO | time_planner.services:__init__:337 | 时间规划服务初始化完成
+2025-07-13 19:29:46 | INFO | time_planner.memory:_load_memory:344 | 从 conversation_memory.json 加载了 2 条历史记录
+2025-07-13 19:29:46 | INFO | time_planner.memory:__init__:106 | 对话记忆管理器初始化完成，加载了 2 条历史记录
+2025-07-13 19:29:46 | INFO | time_planner.agent:__init__:88 | 时间管理 Agent 初始化完成
+2025-07-13 19:29:46 | INFO | time_planner.agent:initialize:94 | 正在初始化 MCP 服务...
+2025-07-13 19:29:46 | INFO | time_planner.simple_mcp_client:start_and_initialize:25 | 启动 MCP 服务器...
+2025-07-13 19:29:48 | INFO | time_planner.simple_mcp_client:start_and_initialize:53 | 发送初始化请求...
+2025-07-13 19:29:48 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | MCP 初始化成功
+2025-07-13 19:29:48 | INFO | time_planner.simple_mcp_client:start_and_initialize:70 | 获取工具列表...
+2025-07-13 19:29:48 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | 获取到 1 个工具
+2025-07-13 19:29:48 | INFO | time_planner.agent:initialize:97 | MCP 思维链服务已启用
+2025-07-13 19:29:48 | INFO | time_planner.agent:initialize:102 | Agent 初始化完成
+2025-07-13 19:29:51 | INFO | time_planner.agent:process_user_request:1034 | 处理用户请求: 你好呀
+2025-07-13 19:30:00 | INFO | time_planner.agent:process_user_request:1135 | 用户请求处理完成
+2025-07-13 19:30:27 | INFO | time_planner.agent:process_user_request:1034 | 处理用户请求: 你觉得我一般几点睡觉呢
+2025-07-13 19:30:37 | INFO | time_planner.agent:process_user_request:1135 | 用户请求处理完成
+2025-07-13 19:30:54 | INFO | time_planner.agent:process_user_request:1034 | 处理用户请求: 我叫做派蒙
+2025-07-13 19:31:04 | INFO | time_planner.agent:process_user_request:1135 | 用户请求处理完成
+2025-07-13 19:31:20 | INFO | time_planner.agent:process_user_request:1034 | 处理用户请求: 我叫什么名字？
+2025-07-13 19:31:24 | INFO | time_planner.agent:process_user_request:1135 | 用户请求处理完成
+2025-07-13 19:32:28 | INFO | time_planner.agent:process_user_request:1034 | 处理用户请求: 你可以帮我把敲代码时间延长些吗？我贪玩导致工作没有完成，取消玩游戏时间
+2025-07-13 19:32:37 | INFO | time_planner.agent:process_user_request:1135 | 用户请求处理完成
+2025-07-13 19:32:58 | INFO | time_planner.agent:process_user_request:1034 | 处理用户请求: 你能根据这个时间给我一些建议吗
+2025-07-13 19:33:13 | INFO | time_planner.agent:process_user_request:1135 | 用户请求处理完成
+2025-07-13 21:47:25 | INFO | time_planner.simple_mcp_client:stop:176 | MCP 服务器已停止
+2025-07-13 21:47:25 | INFO | time_planner.agent:shutdown:114 | Agent 已关闭

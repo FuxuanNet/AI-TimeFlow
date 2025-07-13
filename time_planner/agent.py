@@ -1138,14 +1138,13 @@ class TimeManagementAgent:
         except Exception as e:
             error_message = f"抱歉，处理您的请求时出现了错误：{str(e)}"
             logger.error(f"处理用户请求失败: {e}")
-            logger.error(f"错误详情: {type(e).__name__}: {str(e)}")
 
-            # 记录错误信息到记忆
+            # 记录错误信息
             self.memory.add_message(
                 content=error_message,
                 message_type=MessageType.ASSISTANT,
                 importance=MessageImportance.HIGH,
-                metadata={"error": str(e), "error_type": type(e).__name__},
+                metadata={"error": str(e)},
             )
 
             return error_message
