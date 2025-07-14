@@ -444,3 +444,34 @@
 2025-07-13 19:33:13 | INFO | time_planner.agent:process_user_request:1135 | 用户请求处理完成
 2025-07-13 21:47:25 | INFO | time_planner.simple_mcp_client:stop:176 | MCP 服务器已停止
 2025-07-13 21:47:25 | INFO | time_planner.agent:shutdown:114 | Agent 已关闭
+2025-07-13 23:15:52 | INFO | time_planner.new_services:_load_data:53 | 创建新的时间管理数据，开始日期：2025-07-13
+2025-07-13 23:15:52 | INFO | time_planner.new_services:__init__:34 | 时间管理服务初始化完成，数据文件：time_management_data.json
+2025-07-13 23:15:52 | INFO | time_planner.memory:_load_memory:278 | 对话记忆文件 conversation_memory.json 不存在，将创建新文件
+2025-07-13 23:15:52 | INFO | time_planner.memory:__init__:101 | 对话记忆管理器初始化完成，加载了 0 条历史记录
+2025-07-13 23:15:52 | INFO | time_planner.new_agent:__init__:65 | 新时间管理 Agent 初始化完成
+2025-07-13 23:15:52 | INFO | time_planner.new_cli:__init__:26 | 新命令行界面初始化完成
+2025-07-13 23:15:52 | INFO | time_planner.new_agent:initialize:70 | 正在初始化 MCP 服务...
+2025-07-13 23:15:52 | INFO | time_planner.simple_mcp_client:start_and_initialize:32 | 启动 MCP 服务器...
+2025-07-13 23:15:54 | WARNING | time_planner.simple_mcp_client:start_and_initialize:52 | MCP 服务器进程启动失败
+2025-07-13 23:15:54 | WARNING | time_planner.new_agent:initialize:75 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 23:15:54 | INFO | time_planner.new_agent:initialize:78 | Agent 初始化完成
+2025-07-13 23:16:06 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 你好呀，请问现在几点了呀
+2025-07-13 23:16:13 | INFO | time_planner.new_agent:process_user_request:361 | 用户请求处理完成
+2025-07-13 23:20:36 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 明天早上我要完善后端服务，页面设计，接口设计，这些工作量还是有些大的，同时我还要完成学长交给我的一个维护某软件的任务，这些任务每个大概都需要一到两个小时甚至更久吧。不过我还要有实习，周一到周五九点到十二点，下午一点半到四点半，好难受呀，晚上还要写作业和实习日记，估计完成要八点，我的这些任务要怎么分配才能争取这周尽快完成呢？我希望好好吃饭，适当休息
+2025-07-13 23:21:21 | INFO | time_planner.new_agent:process_user_request:361 | 用户请求处理完成
+2025-07-13 23:24:05 | INFO | time_planner.simple_mcp_client:stop:199 | MCP 服务器已停止
+2025-07-13 23:24:05 | INFO | time_planner.new_agent:shutdown:90 | Agent 已关闭
+2025-07-13 23:24:05 | INFO | time_planner.new_cli:_cleanup:259 | 系统已关闭
+2025-07-13 23:24:12 | INFO | time_planner.new_services:_load_data:42 | 成功加载时间管理数据，包含 0 天和 0 周的计划
+2025-07-13 23:24:12 | INFO | time_planner.new_services:__init__:34 | 时间管理服务初始化完成，数据文件：time_management_data.json
+2025-07-13 23:24:12 | INFO | time_planner.memory:__init__:101 | 对话记忆管理器初始化完成，加载了 4 条历史记录
+2025-07-13 23:24:12 | INFO | time_planner.new_agent:__init__:65 | 新时间管理 Agent 初始化完成
+2025-07-13 23:24:12 | INFO | time_planner.new_cli:__init__:26 | 新命令行界面初始化完成
+2025-07-13 23:24:12 | INFO | time_planner.new_agent:initialize:70 | 正在初始化 MCP 服务...
+2025-07-13 23:24:12 | INFO | time_planner.simple_mcp_client:start_and_initialize:32 | 启动 MCP 服务器...
+2025-07-13 23:24:14 | WARNING | time_planner.simple_mcp_client:start_and_initialize:52 | MCP 服务器进程启动失败
+2025-07-13 23:24:14 | WARNING | time_planner.new_agent:initialize:75 | MCP 服务初始化失败，将以基础模式运行
+2025-07-13 23:24:14 | INFO | time_planner.new_agent:initialize:78 | Agent 初始化完成
+2025-07-13 23:25:28 | INFO | time_planner.simple_mcp_client:stop:199 | MCP 服务器已停止
+2025-07-13 23:25:28 | INFO | time_planner.new_agent:shutdown:90 | Agent 已关闭
+2025-07-13 23:25:28 | INFO | time_planner.new_cli:_cleanup:259 | 系统已关闭

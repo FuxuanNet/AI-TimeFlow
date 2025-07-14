@@ -117,32 +117,41 @@ def check_dependencies():
 def check_mcp_server():
     """检查 MCP 服务器是否可用"""
     import subprocess
+    import os
+    from pathlib import Path
 
     try:
-        # 尝试运行 MCP 服务器检查命令
-        result = subprocess.run(
-            ["npm", "list", "-g", "@modelcontextprotocol/server-sequential-thinking"],
-            capture_output=True,
-            text=True,
-            timeout=10,
-        )
+        # 检查本地 MCP 服务器文件
+        mcp_js_path = Path("sequentialthinking/dist/index.js")
+        if mcp_js_path.exists():
+            print("✅ 本地 MCP Sequential Thinking 服务器已编译")
 
-        if result.returncode == 0:
-            print("✅ MCP Sequential Thinking 服务器已安装")
-            return True
+            # 检查是否可以运行 node
+            try:
+                result = subprocess.run(
+                    ["node", "--version"],
+                    capture_output=True,
+                    text=True,
+                    timeout=5,
+                )
+                if result.returncode == 0:
+                    print(f"✅ Node.js 已安装: {result.stdout.strip()}")
+                    return True
+                else:
+                    print("❌ Node.js 无法运行")
+                    return False
+            except subprocess.TimeoutExpired:
+                print("⚠️  检查 Node.js 超时")
+                return False
+            except FileNotFoundError:
+                print("❌ 未找到 Node.js，请确保 Node.js 已安装并在 PATH 中")
+                return False
         else:
-            print("⚠️  MCP Sequential Thinking 服务器未安装")
             print(
-                "请运行: npm install -g @modelcontextprotocol/server-sequential-thinking"
+                "❌ 本地 MCP 服务器未编译，请在 sequentialthinking 目录运行: npm run build"
             )
             return False
 
-    except subprocess.TimeoutExpired:
-        print("⚠️  检查 MCP 服务器超时")
-        return False
-    except FileNotFoundError:
-        print("⚠️  未找到 npm，请确保 Node.js 已安装")
-        return False
     except Exception as e:
         print(f"⚠️  检查 MCP 服务器时出错: {e}")
         return False

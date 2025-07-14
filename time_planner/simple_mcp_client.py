@@ -19,7 +19,7 @@ from loguru import logger
 class SimpleMCPClient:
     """简化的 MCP 客户端"""
 
-    def __init__(self, server_path: str = "sequentialthinking"):
+    def __init__(self, server_path: str = "sequentialthinking/dist/index.js"):
         """初始化客户端"""
         self.server_path = server_path
         self.process: Optional[subprocess.Popen] = None
@@ -31,15 +31,16 @@ class SimpleMCPClient:
         try:
             logger.info("启动 MCP 服务器...")
 
-            # 尝试启动服务器进程
+            # 尝试启动服务器进程 - 使用 Node.js 运行
             try:
                 self.process = subprocess.Popen(
-                    [sys.executable, "-m", self.server_path],
+                    ["node", self.server_path],
                     stdin=subprocess.PIPE,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     text=True,
                     bufsize=0,
+                    cwd=".",  # 在项目根目录运行
                 )
 
                 # 等待一下让服务器启动
