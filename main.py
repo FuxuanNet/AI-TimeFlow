@@ -171,8 +171,7 @@ async def run_demo_mode():
         print("\\n正在初始化新时间管理系统...")
 
         # 初始化服务和 Agent
-        time_service = TimeManagementService()
-        agent = NewTimeManagementAgent(time_service)
+        agent = NewTimeManagementAgent()  # Agent 会自己初始化服务
 
         print("✅ 系统初始化成功")
 
@@ -203,7 +202,7 @@ async def run_demo_mode():
         print("\\n🎉 演示完成！")
 
         # 显示统计信息
-        stats = time_service.get_statistics()
+        stats = agent.time_service.get_statistics()
         print("\\n📊 系统统计:")
         for key, value in stats.items():
             print(f"  {key}: {value}")

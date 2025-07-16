@@ -475,3 +475,152 @@
 2025-07-13 23:25:28 | INFO | time_planner.simple_mcp_client:stop:199 | MCP 服务器已停止
 2025-07-13 23:25:28 | INFO | time_planner.new_agent:shutdown:90 | Agent 已关闭
 2025-07-13 23:25:28 | INFO | time_planner.new_cli:_cleanup:259 | 系统已关闭
+2025-07-13 23:28:33 | INFO | time_planner.new_services:_load_data:42 | 成功加载时间管理数据，包含 0 天和 0 周的计划
+2025-07-13 23:28:33 | INFO | time_planner.new_services:__init__:34 | 时间管理服务初始化完成，数据文件：time_management_data.json
+2025-07-13 23:28:33 | INFO | time_planner.memory:__init__:101 | 对话记忆管理器初始化完成，加载了 4 条历史记录
+2025-07-13 23:28:33 | INFO | time_planner.new_agent:__init__:65 | 新时间管理 Agent 初始化完成
+2025-07-13 23:28:33 | INFO | time_planner.new_cli:__init__:26 | 新命令行界面初始化完成
+2025-07-13 23:28:33 | INFO | time_planner.new_agent:initialize:70 | 正在初始化 MCP 服务...
+2025-07-13 23:28:33 | INFO | time_planner.simple_mcp_client:start_and_initialize:32 | 启动 MCP 服务器...
+2025-07-13 23:28:35 | INFO | time_planner.simple_mcp_client:start_and_initialize:51 | MCP 服务器进程启动成功
+2025-07-13 23:28:35 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | 发送初始化请求...
+2025-07-13 23:28:35 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | MCP 初始化成功
+2025-07-13 23:28:35 | INFO | time_planner.simple_mcp_client:_get_tools:120 | 获取工具列表...
+2025-07-13 23:28:35 | INFO | time_planner.simple_mcp_client:_get_tools:132 | 获取到 1 个工具
+2025-07-13 23:28:35 | INFO | time_planner.new_agent:initialize:73 | MCP 思维链服务已启用
+2025-07-13 23:28:35 | INFO | time_planner.new_agent:initialize:78 | Agent 初始化完成
+2025-07-13 23:28:46 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 输出一下我的课程安排
+2025-07-13 23:29:05 | INFO | time_planner.new_agent:process_user_request:361 | 用户请求处理完成
+2025-07-13 23:29:36 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 我叫做福轩
+2025-07-13 23:30:06 | INFO | time_planner.new_agent:process_user_request:361 | 用户请求处理完成
+2025-07-16 12:00:52 | INFO | time_planner.new_services:_load_data:42 | 成功加载时间管理数据，包含 0 天和 0 周的计划
+2025-07-16 12:00:52 | INFO | time_planner.new_services:__init__:34 | 时间管理服务初始化完成，数据文件：time_management_data.json
+2025-07-16 12:00:52 | INFO | time_planner.memory:__init__:101 | 对话记忆管理器初始化完成，加载了 8 条历史记录
+2025-07-16 12:00:52 | INFO | time_planner.new_agent:__init__:65 | 新时间管理 Agent 初始化完成
+2025-07-16 12:00:52 | INFO | time_planner.new_cli:__init__:26 | 新命令行界面初始化完成
+2025-07-16 12:00:52 | INFO | time_planner.new_agent:initialize:70 | 正在初始化 MCP 服务...
+2025-07-16 12:00:52 | INFO | time_planner.simple_mcp_client:start_and_initialize:32 | 启动 MCP 服务器...
+2025-07-16 12:00:54 | INFO | time_planner.simple_mcp_client:start_and_initialize:51 | MCP 服务器进程启动成功
+2025-07-16 12:00:54 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | 发送初始化请求...
+2025-07-16 12:00:54 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | MCP 初始化成功
+2025-07-16 12:00:54 | INFO | time_planner.simple_mcp_client:_get_tools:120 | 获取工具列表...
+2025-07-16 12:00:54 | INFO | time_planner.simple_mcp_client:_get_tools:132 | 获取到 1 个工具
+2025-07-16 12:00:54 | INFO | time_planner.new_agent:initialize:73 | MCP 思维链服务已启用
+2025-07-16 12:00:54 | INFO | time_planner.new_agent:initialize:78 | Agent 初始化完成
+2025-07-16 12:01:08 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 你好，请问你可以调用哪些工具呀
+2025-07-16 12:01:23 | INFO | time_planner.new_agent:process_user_request:361 | 用户请求处理完成
+2025-07-16 12:32:26 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 我今天中午要吃饭，下午要从一点半开始干活，赶到四点半，但是我要去医院，医院五点关门，我应该怎么安排时间做出规划表呢？
+2025-07-16 12:32:40 | INFO | time_planner.new_agent:process_user_request:361 | 用户请求处理完成
+2025-07-16 13:39:00 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 我总共有哪些时间规划
+2025-07-16 13:39:38 | INFO | time_planner.new_agent:process_user_request:361 | 用户请求处理完成
+2025-07-16 13:40:56 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 上面的那些是你查看的我的历史记录，还是我本地的存储的表格呢
+2025-07-16 13:41:17 | INFO | time_planner.new_agent:process_user_request:361 | 用户请求处理完成
+2025-07-16 13:51:27 | INFO | time_planner.simple_mcp_client:stop:200 | MCP 服务器已停止
+2025-07-16 13:51:27 | INFO | time_planner.new_agent:shutdown:90 | Agent 已关闭
+2025-07-16 13:51:27 | INFO | time_planner.new_cli:_cleanup:259 | 系统已关闭
+2025-07-16 15:50:38 | INFO | time_planner.new_services:_load_data:53 | 创建新的时间管理数据，开始日期：2025-07-16
+2025-07-16 15:50:38 | INFO | time_planner.new_services:__init__:34 | 时间管理服务初始化完成，数据文件：time_management_data.json
+2025-07-16 15:50:38 | INFO | time_planner.memory:_load_memory:278 | 对话记忆文件 conversation_memory.json 不存在，将创建新文件
+2025-07-16 15:50:38 | INFO | time_planner.memory:__init__:101 | 对话记忆管理器初始化完成，加载了 0 条历史记录
+2025-07-16 15:50:38 | INFO | time_planner.new_agent:__init__:65 | 新时间管理 Agent 初始化完成
+2025-07-16 15:50:38 | INFO | time_planner.new_cli:__init__:26 | 新命令行界面初始化完成
+2025-07-16 15:50:38 | INFO | time_planner.new_agent:initialize:70 | 正在初始化 MCP 服务...
+2025-07-16 15:50:38 | INFO | time_planner.simple_mcp_client:start_and_initialize:32 | 启动 MCP 服务器...
+2025-07-16 15:50:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:51 | MCP 服务器进程启动成功
+2025-07-16 15:50:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | 发送初始化请求...
+2025-07-16 15:50:40 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | MCP 初始化成功
+2025-07-16 15:50:40 | INFO | time_planner.simple_mcp_client:_get_tools:120 | 获取工具列表...
+2025-07-16 15:50:40 | INFO | time_planner.simple_mcp_client:_get_tools:132 | 获取到 1 个工具
+2025-07-16 15:50:40 | INFO | time_planner.new_agent:initialize:73 | MCP 思维链服务已启用
+2025-07-16 15:50:40 | INFO | time_planner.new_agent:initialize:78 | Agent 初始化完成
+2025-07-16 15:51:40 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 帮我规划一个学习编程的长期规划，我想成为编程大师，我需要怎么安排我的每周学习进度呢？请你帮我分解
+2025-07-16 15:52:16 | INFO | time_planner.new_agent:_save_ai_generated_schedule:450 | AI生成的时间表已保存到: ai_generated_schedules/schedule_20250716_155216.json
+2025-07-16 15:52:16 | INFO | time_planner.new_agent:_save_ai_generated_schedule:451 | 最新时间表已更新: ai_generated_schedules/latest_schedule.json
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | ERROR | time_planner.new_services:add_weekly_task:203 | 添加周任务失败：unsupported operand type(s) for -: 'str' and 'int'
+2025-07-16 15:52:16 | INFO | time_planner.new_agent:process_user_request:365 | 用户请求处理完成
+2025-07-16 15:53:20 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 那我明后天的时间怎么安排呀
+2025-07-16 15:53:42 | INFO | time_planner.new_agent:_save_ai_generated_schedule:450 | AI生成的时间表已保存到: ai_generated_schedules/schedule_20250716_155342.json
+2025-07-16 15:53:42 | INFO | time_planner.new_agent:_save_ai_generated_schedule:451 | 最新时间表已更新: ai_generated_schedules/latest_schedule.json
+2025-07-16 15:53:42 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：编程基础复习 (2025-07-17 09:00-11:00)
+2025-07-16 15:53:42 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：数据结构练习 (2025-07-17 14:00-16:00)
+2025-07-16 15:53:42 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：项目实践 (2025-07-18 10:00-12:00)
+2025-07-16 15:53:42 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：算法深入练习 (2025-07-18 14:00-16:00)
+2025-07-16 15:53:42 | INFO | time_planner.new_agent:process_user_request:365 | 用户请求处理完成
+2025-07-16 15:54:56 | INFO | time_planner.simple_mcp_client:stop:200 | MCP 服务器已停止
+2025-07-16 15:54:56 | INFO | time_planner.new_agent:shutdown:90 | Agent 已关闭
+2025-07-16 15:54:56 | INFO | time_planner.new_cli:_cleanup:259 | 系统已关闭
+2025-07-16 15:57:02 | INFO | time_planner.new_services:_load_data:53 | 创建新的时间管理数据，开始日期：2025-07-16
+2025-07-16 15:57:02 | INFO | time_planner.new_services:__init__:34 | 时间管理服务初始化完成，数据文件：time_management_data.json
+2025-07-16 15:57:02 | INFO | time_planner.memory:_load_memory:278 | 对话记忆文件 conversation_memory.json 不存在，将创建新文件
+2025-07-16 15:57:02 | INFO | time_planner.memory:__init__:101 | 对话记忆管理器初始化完成，加载了 0 条历史记录
+2025-07-16 15:57:02 | INFO | time_planner.new_agent:__init__:65 | 新时间管理 Agent 初始化完成
+2025-07-16 15:57:02 | INFO | time_planner.new_cli:__init__:26 | 新命令行界面初始化完成
+2025-07-16 15:57:02 | INFO | time_planner.new_agent:initialize:70 | 正在初始化 MCP 服务...
+2025-07-16 15:57:02 | INFO | time_planner.simple_mcp_client:start_and_initialize:32 | 启动 MCP 服务器...
+2025-07-16 15:57:04 | INFO | time_planner.simple_mcp_client:start_and_initialize:51 | MCP 服务器进程启动成功
+2025-07-16 15:57:04 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | 发送初始化请求...
+2025-07-16 15:57:04 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | MCP 初始化成功
+2025-07-16 15:57:04 | INFO | time_planner.simple_mcp_client:_get_tools:120 | 获取工具列表...
+2025-07-16 15:57:04 | INFO | time_planner.simple_mcp_client:_get_tools:132 | 获取到 1 个工具
+2025-07-16 15:57:04 | INFO | time_planner.new_agent:initialize:73 | MCP 思维链服务已启用
+2025-07-16 15:57:04 | INFO | time_planner.new_agent:initialize:78 | Agent 初始化完成
+2025-07-16 15:57:44 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 我想要成为编程大师，请问我需要怎么安排我的每周学习任务呢？
+2025-07-16 15:58:02 | INFO | time_planner.new_agent:_save_ai_generated_schedule:450 | AI生成的时间表已保存到: ai_generated_schedules/schedule_20250716_155802.json
+2025-07-16 15:58:02 | INFO | time_planner.new_agent:_save_ai_generated_schedule:451 | 最新时间表已更新: ai_generated_schedules/latest_schedule.json
+2025-07-16 15:58:02 | ERROR | time_planner.new_services:add_weekly_task:207 | 添加周任务失败：invalid literal for int() with base 10: 'current'
+2025-07-16 15:58:02 | ERROR | time_planner.new_services:add_weekly_task:207 | 添加周任务失败：invalid literal for int() with base 10: 'current'
+2025-07-16 15:58:02 | ERROR | time_planner.new_services:add_weekly_task:207 | 添加周任务失败：invalid literal for int() with base 10: 'current'
+2025-07-16 15:58:02 | ERROR | time_planner.new_services:add_weekly_task:207 | 添加周任务失败：invalid literal for int() with base 10: 'current'
+2025-07-16 15:58:02 | ERROR | time_planner.new_services:add_weekly_task:207 | 添加周任务失败：invalid literal for int() with base 10: 'current'
+2025-07-16 15:58:02 | INFO | time_planner.new_agent:process_user_request:365 | 用户请求处理完成
+2025-07-16 16:00:06 | INFO | time_planner.simple_mcp_client:stop:200 | MCP 服务器已停止
+2025-07-16 16:00:06 | INFO | time_planner.new_agent:shutdown:90 | Agent 已关闭
+2025-07-16 16:00:06 | INFO | time_planner.new_cli:_cleanup:259 | 系统已关闭
+2025-07-16 16:02:19 | INFO | time_planner.new_services:_load_data:53 | 创建新的时间管理数据，开始日期：2025-07-16
+2025-07-16 16:02:19 | INFO | time_planner.new_services:__init__:34 | 时间管理服务初始化完成，数据文件：time_management_data.json
+2025-07-16 16:02:19 | INFO | time_planner.memory:_load_memory:278 | 对话记忆文件 conversation_memory.json 不存在，将创建新文件
+2025-07-16 16:02:19 | INFO | time_planner.memory:__init__:101 | 对话记忆管理器初始化完成，加载了 0 条历史记录
+2025-07-16 16:02:19 | INFO | time_planner.new_agent:__init__:65 | 新时间管理 Agent 初始化完成
+2025-07-16 16:02:19 | INFO | time_planner.new_cli:__init__:26 | 新命令行界面初始化完成
+2025-07-16 16:02:19 | INFO | time_planner.new_agent:initialize:70 | 正在初始化 MCP 服务...
+2025-07-16 16:02:19 | INFO | time_planner.simple_mcp_client:start_and_initialize:32 | 启动 MCP 服务器...
+2025-07-16 16:02:21 | INFO | time_planner.simple_mcp_client:start_and_initialize:51 | MCP 服务器进程启动成功
+2025-07-16 16:02:21 | INFO | time_planner.simple_mcp_client:start_and_initialize:60 | 发送初始化请求...
+2025-07-16 16:02:21 | INFO | time_planner.simple_mcp_client:start_and_initialize:79 | MCP 初始化成功
+2025-07-16 16:02:21 | INFO | time_planner.simple_mcp_client:_get_tools:120 | 获取工具列表...
+2025-07-16 16:02:21 | INFO | time_planner.simple_mcp_client:_get_tools:132 | 获取到 1 个工具
+2025-07-16 16:02:21 | INFO | time_planner.new_agent:initialize:73 | MCP 思维链服务已启用
+2025-07-16 16:02:21 | INFO | time_planner.new_agent:initialize:78 | Agent 初始化完成
+2025-07-16 16:02:25 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 我想要成为编程大师，请问我需要怎么安排我的每周学习任务呢？
+2025-07-16 16:02:44 | INFO | time_planner.new_agent:_save_ai_generated_schedule:450 | AI生成的时间表已保存到: ai_generated_schedules/schedule_20250716_160244.json
+2025-07-16 16:02:44 | INFO | time_planner.new_agent:_save_ai_generated_schedule:451 | 最新时间表已更新: ai_generated_schedules/latest_schedule.json
+2025-07-16 16:02:44 | INFO | time_planner.new_services:add_weekly_task:211 | 成功添加周任务：学习数据结构与算法 (第1周，优先级：high)
+2025-07-16 16:02:44 | INFO | time_planner.new_services:add_weekly_task:211 | 成功添加周任务：参与开源项目 (第1周，优先级：medium)
+2025-07-16 16:02:44 | INFO | time_planner.new_services:add_weekly_task:211 | 成功添加周任务：阅读编程书籍 (第1周，优先级：medium)
+2025-07-16 16:02:44 | INFO | time_planner.new_services:add_weekly_task:211 | 成功添加周任务：编程练习 (第1周，优先级：high)
+2025-07-16 16:02:44 | INFO | time_planner.new_services:add_weekly_task:211 | 成功添加周任务：技术博客写作 (第1周，优先级：low)
+2025-07-16 16:02:44 | INFO | time_planner.new_agent:process_user_request:365 | 用户请求处理完成
+2025-07-16 16:04:27 | INFO | time_planner.new_agent:process_user_request:166 | 处理用户请求: 那我明后天的学习计划应该是什么呢
+2025-07-16 16:04:57 | INFO | time_planner.new_agent:_save_ai_generated_schedule:450 | AI生成的时间表已保存到: ai_generated_schedules/schedule_20250716_160457.json
+2025-07-16 16:04:57 | INFO | time_planner.new_agent:_save_ai_generated_schedule:451 | 最新时间表已更新: ai_generated_schedules/latest_schedule.json
+2025-07-16 16:04:57 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：数据结构与算法学习 (2025-07-17 09:00-11:00)
+2025-07-16 16:04:57 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：编程练习 (2025-07-17 14:00-15:00)
+2025-07-16 16:04:57 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：阅读编程书籍 (2025-07-17 20:00-21:00)
+2025-07-16 16:04:57 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：数据结构与算法学习 (2025-07-18 09:00-11:00)
+2025-07-16 16:04:57 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：参与开源项目 (2025-07-18 14:00-17:00)
+2025-07-16 16:04:57 | INFO | time_planner.new_services:add_daily_task:143 | 成功添加日任务：技术博客写作 (2025-07-18 20:00-21:00)
+2025-07-16 16:04:57 | INFO | time_planner.new_agent:process_user_request:365 | 用户请求处理完成
+2025-07-16 16:27:14 | INFO | time_planner.simple_mcp_client:stop:200 | MCP 服务器已停止
+2025-07-16 16:27:14 | INFO | time_planner.new_agent:shutdown:90 | Agent 已关闭
+2025-07-16 16:27:14 | INFO | time_planner.new_cli:_cleanup:259 | 系统已关闭

@@ -166,6 +166,34 @@ class TimeUtils:
     """时间工具类"""
 
     @staticmethod
+    def calculate_week_number(start_date_str: str, target_date_str: str) -> int:
+        """计算目标日期是第几周（从开始日期算起）"""
+        try:
+            start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
+            target_date = datetime.strptime(target_date_str, "%Y-%m-%d").date()
+            days_diff = (target_date - start_date).days
+            week_number = (days_diff // 7) + 1
+            return max(1, week_number)
+        except ValueError:
+            return 1
+
+    @staticmethod
+    def get_week_date_range(start_date_str: str, week_number: int) -> str:
+        """获取指定周的日期范围"""
+        try:
+            start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
+
+            # 计算目标周的开始日期
+            week_start = start_date + timedelta(days=(week_number - 1) * 7)
+            week_end = week_start + timedelta(days=6)
+
+            return (
+                f"{week_start.strftime('%Y-%m-%d')} - {week_end.strftime('%Y-%m-%d')}"
+            )
+        except ValueError:
+            return "Invalid date range"
+
+    @staticmethod
     def get_current_datetime() -> Dict[str, Any]:
         """获取当前时间信息"""
         now = datetime.now()

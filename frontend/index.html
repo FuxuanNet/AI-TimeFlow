@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 时间管理系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部导航 -->
+        <header class="header">
+            <h1>🤖 AI 时间管理系统</h1>
+            <div class="nav-buttons">
+                <button id="chatBtn" class="nav-btn active">💬 AI 对话</button>
+                <button id="dailyBtn" class="nav-btn">📅 日计划</button>
+                <button id="weeklyBtn" class="nav-btn">📊 周计划</button>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- AI 对话页面 -->
+            <div id="chatPage" class="page active">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h2>与 AI 助手对话</h2>
+                        <div class="status-indicator">
+                            <span id="connectionStatus" class="status offline">离线</span>
+                        </div>
+                    </div>
+                    
+                    <div id="chatMessages" class="chat-messages">
+                        <div class="message bot-message">
+                            <div class="message-content">
+                                <strong>AI 助手:</strong> 你好！我是你的时间管理助手。你可以告诉我你的计划，我会帮你制定合理的时间安排。
+                            </div>
+                            <div class="message-time">系统消息</div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <div class="input-group">
+                            <input type="text" id="chatInput" placeholder="请输入您的问题或需求..." />
+                            <button id="sendBtn" class="send-btn">发送</button>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-btn" data-message="帮我安排今天的学习计划">📚 今日学习计划</button>
+                            <button class="quick-btn" data-message="查看我本周的任务安排">📋 本周任务</button>
+                            <button class="quick-btn" data-message="帮我优化时间安排">⚡ 优化安排</button>
+                            <button class="quick-btn" data-message="现在是什么时间？">⏰ 当前时间</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 日计划页面 -->
+            <div id="dailyPage" class="page">
+                <div class="schedule-container">
+                    <div class="schedule-header">
+                        <h2>📅 日计划表</h2>
+                        <div class="date-controls">
+                            <button id="prevDay" class="date-btn">←</button>
+                            <input type="date" id="dateSelector" />
+                            <button id="nextDay" class="date-btn">→</button>
+                            <button id="todayBtn" class="today-btn">今天</button>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-content">
+                        <div id="dailyTasks" class="tasks-container">
+                            <div class="no-tasks">
+                                <p>📝 当前日期没有安排任务</p>
+                                <p>您可以通过 AI 对话来添加任务</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 周计划页面 -->
+            <div id="weeklyPage" class="page">
+                <div class="schedule-container">
+                    <div class="schedule-header">
+                        <h2>📊 周计划表</h2>
+                        <div class="week-controls">
+                            <button id="prevWeek" class="date-btn">←</button>
+                            <span id="weekRange">第 1 周</span>
+                            <button id="nextWeek" class="date-btn">→</button>
+                            <button id="currentWeekBtn" class="today-btn">本周</button>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-content">
+                        <div id="weeklyTasks" class="tasks-container">
+                            <div class="no-tasks">
+                                <p>📋 当前周没有安排任务</p>
+                                <p>您可以通过 AI 对话来添加任务</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 工具调用显示 -->
+        <div id="toolsPanel" class="tools-panel hidden">
+            <div class="tools-header">
+                <h3>🔧 AI 调用的工具</h3>
+                <button id="closeToolsBtn" class="close-btn">×</button>
+            </div>
+            <div id="toolsList" class="tools-list"></div>
+        </div>
+
+        <!-- 加载指示器 -->
+        <div id="loadingIndicator" class="loading-indicator hidden">
+            <div class="spinner"></div>
+            <p>AI 正在思考中...</p>
+        </div>
+    </div>
+
+    <!-- 引入 JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

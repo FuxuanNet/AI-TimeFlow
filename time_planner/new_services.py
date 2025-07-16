@@ -152,13 +152,27 @@ class TimeManagementService:
     def add_weekly_task(
         self,
         task_name: str,
-        week_number: int,
+        week_number: Union[int, str],  # 允许字符串输入
         description: str = "",
         parent_project: Optional[str] = None,
         priority: Union[Priority, str] = Priority.MEDIUM,
     ) -> bool:
         """添加周任务"""
         try:
+            # 处理周数参数 - 确保是整数
+            if isinstance(week_number, str):
+                # 处理特殊字符串
+                if week_number.lower() in ["current", "本周", "this_week"]:
+                    current_time = self.get_current_time_info()
+                    week_number = self.get_week_number(current_time["current_date"])
+                else:
+                    try:
+                        week_number = int(week_number)
+                    except ValueError:
+                        logger.warning(f"无法解析周数 '{week_number}'，使用当前周")
+                        current_time = self.get_current_time_info()
+                        week_number = self.get_week_number(current_time["current_date"])
+
             # 处理优先级参数
             if isinstance(priority, str):
                 priority = Priority(priority)

@@ -330,6 +330,10 @@ JSON格式示例：
                 try:
                     # 尝试从回复中提取JSON
                     json_data = json.loads(result_content)
+
+                    # 保存AI生成的完整JSON到文件（为前端准备）
+                    await self._save_ai_generated_schedule(json_data, user_input)
+
                     execution_result = await self._execute_time_management_actions(
                         json_data
                     )
@@ -374,53 +378,174 @@ JSON格式示例：
 
             return error_message
 
-    async def _execute_time_management_actions(self, json_data: Dict[str, Any]) -> str:
-        """执行时间管理操作"""
+    async def _save_ai_generated_schedule(
+        self, json_data: Dict[str, Any], user_request: str
+    ):
+        """保存AI生成的时间表到文件（为前端准备）"""
         try:
-            task_type = json_data.get("task_type", "daily")
-            action = json_data.get("action", "add")
-            tasks = json_data.get("tasks", [])
+            import os
+            from datetime import datetime
 
+            # 创建AI生成的时间表目录
+            ai_schedules_dir = "ai_generated_schedules"
+            os.makedirs(ai_schedules_dir, exist_ok=True)
+
+            # 获取当前时间信息
+            current_time = self.time_service.get_current_time_info()
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+            # 准备保存的数据结构
+            schedule_data = {
+                "metadata": {
+                    "timestamp": current_time["current_datetime"],
+                    "user_request": user_request,
+                    "generated_by": "AI Time Management Assistant",
+                    "version": "1.0",
+                },
+                "ai_response": json_data,
+                "processed_tasks": {"daily_tasks": [], "weekly_tasks": []},
+            }
+
+            # 解析AI响应中的任务
+            if "daily_schedule" in json_data:
+                for task in json_data["daily_schedule"]:
+                    schedule_data["processed_tasks"]["daily_tasks"].append(
+                        {
+                            "task_name": task.get("task_name", ""),
+                            "belong_to_day": task.get(
+                                "belong_to_day", current_time["current_date"]
+                            ),
+                            "start_time": task.get("start_time", ""),
+                            "end_time": task.get("end_time", ""),
+                            "description": task.get("description", ""),
+                            "can_reschedule": task.get("can_reschedule", True),
+                            "can_compress": task.get("can_compress", True),
+                            "can_parallel": task.get("can_parallel", False),
+                            "parent_task": task.get("parent_task"),
+                        }
+                    )
+
+            if "weekly_schedule" in json_data:
+                for task in json_data["weekly_schedule"]:
+                    schedule_data["processed_tasks"]["weekly_tasks"].append(
+                        {
+                            "task_name": task.get("task_name", ""),
+                            "belong_to_week": task.get("belong_to_week", 1),
+                            "description": task.get("description", ""),
+                            "parent_project": task.get("parent_project"),
+                            "priority": task.get("priority", "medium"),
+                        }
+                    )
+
+            # 保存到JSON文件
+            filename = f"{ai_schedules_dir}/schedule_{timestamp}.json"
+            with open(filename, "w", encoding="utf-8") as f:
+                json.dump(schedule_data, f, ensure_ascii=False, indent=2)
+
+            # 同时保存为最新的时间表（方便前端获取）
+            latest_filename = f"{ai_schedules_dir}/latest_schedule.json"
+            with open(latest_filename, "w", encoding="utf-8") as f:
+                json.dump(schedule_data, f, ensure_ascii=False, indent=2)
+
+            logger.info(f"AI生成的时间表已保存到: {filename}")
+            logger.info(f"最新时间表已更新: {latest_filename}")
+
+        except Exception as e:
+            logger.error(f"保存AI生成的时间表失败: {e}")
+
+    async def _execute_time_management_actions(self, json_data: Dict[str, Any]) -> str:
+        """执行时间管理操作（增强版）"""
+        try:
             results = []
 
-            for task_data in tasks:
-                if task_type == "daily" and action == "add":
-                    success = self.time_service.add_daily_task(
-                        task_name=task_data.get("task_name", ""),
-                        date_str=task_data.get(
-                            "belong_to_day",
-                            self.time_service.get_current_time_info()["current_date"],
-                        ),
-                        start_time=task_data.get("start_time", "09:00"),
-                        end_time=task_data.get("end_time", "10:00"),
-                        description=task_data.get("description", ""),
-                        can_reschedule=task_data.get("can_reschedule", True),
-                        can_compress=task_data.get("can_compress", True),
-                        can_parallel=task_data.get("can_parallel", False),
-                        parent_task=task_data.get("parent_task"),
-                    )
-                    if success:
-                        results.append(
-                            f"✓ 日任务 '{task_data.get('task_name')}' 已添加"
+            # 处理日任务
+            if "daily_schedule" in json_data:
+                daily_tasks = json_data["daily_schedule"]
+                if isinstance(daily_tasks, list):
+                    for task_data in daily_tasks:
+                        success = self.time_service.add_daily_task(
+                            task_name=task_data.get("task_name", ""),
+                            date_str=task_data.get("belong_to_day", "今天"),
+                            start_time=task_data.get("start_time", ""),
+                            end_time=task_data.get("end_time", ""),
+                            description=task_data.get("description", ""),
+                            can_reschedule=task_data.get("can_reschedule", True),
+                            can_compress=task_data.get("can_compress", True),
+                            can_parallel=task_data.get("can_parallel", False),
+                            parent_task=task_data.get("parent_task"),
+                        )
+                        if success:
+                            results.append(
+                                f"✓ 日任务 '{task_data.get('task_name')}' 已添加"
+                            )
+
+            # 处理周任务
+            if "weekly_schedule" in json_data:
+                weekly_tasks = json_data["weekly_schedule"]
+                if isinstance(weekly_tasks, list):
+                    for task_data in weekly_tasks:
+                        current_time = self.time_service.get_current_time_info()
+                        current_week = self.time_service.get_week_number(
+                            current_time["current_date"]
                         )
 
-                elif task_type == "weekly" and action == "add":
-                    current_time = self.time_service.get_current_time_info()
-                    current_week = self.time_service.get_week_number(
-                        current_time["current_date"]
-                    )
-
-                    success = self.time_service.add_weekly_task(
-                        task_name=task_data.get("task_name", ""),
-                        week_number=task_data.get("belong_to_week", current_week),
-                        description=task_data.get("description", ""),
-                        parent_project=task_data.get("parent_project"),
-                        priority=Priority(task_data.get("priority", "medium")),
-                    )
-                    if success:
-                        results.append(
-                            f"✓ 周任务 '{task_data.get('task_name')}' 已添加"
+                        success = self.time_service.add_weekly_task(
+                            task_name=task_data.get("task_name", ""),
+                            week_number=task_data.get("belong_to_week", current_week),
+                            description=task_data.get("description", ""),
+                            parent_project=task_data.get("parent_project"),
+                            priority=task_data.get("priority", "medium"),
                         )
+                        if success:
+                            results.append(
+                                f"✓ 周任务 '{task_data.get('task_name')}' 已添加"
+                            )
+
+            # 处理其他格式的任务数据（兼容旧格式）
+            for key, value in json_data.items():
+                if key not in ["daily_schedule", "weekly_schedule"] and isinstance(
+                    value, list
+                ):
+                    for item in value:
+                        if isinstance(item, dict) and "task_name" in item:
+                            # 判断是日任务还是周任务
+                            if "start_time" in item and "end_time" in item:
+                                # 日任务
+                                success = self.time_service.add_daily_task(
+                                    task_name=item.get("task_name", ""),
+                                    date_str=item.get("belong_to_day", "今天"),
+                                    start_time=item.get("start_time", ""),
+                                    end_time=item.get("end_time", ""),
+                                    description=item.get("description", ""),
+                                    can_reschedule=item.get("can_reschedule", True),
+                                    can_compress=item.get("can_compress", True),
+                                    can_parallel=item.get("can_parallel", False),
+                                    parent_task=item.get("parent_task"),
+                                )
+                                if success:
+                                    results.append(
+                                        f"✓ 日任务 '{item.get('task_name')}' 已添加"
+                                    )
+                            elif "priority" in item or "belong_to_week" in item:
+                                # 周任务
+                                current_time = self.time_service.get_current_time_info()
+                                current_week = self.time_service.get_week_number(
+                                    current_time["current_date"]
+                                )
+
+                                success = self.time_service.add_weekly_task(
+                                    task_name=item.get("task_name", ""),
+                                    week_number=item.get(
+                                        "belong_to_week", current_week
+                                    ),
+                                    description=item.get("description", ""),
+                                    parent_project=item.get("parent_project"),
+                                    priority=item.get("priority", "medium"),
+                                )
+                                if success:
+                                    results.append(
+                                        f"✓ 周任务 '{item.get('task_name')}' 已添加"
+                                    )
 
             return (
                 "\\n".join(results) if results else "操作完成，但没有具体任务被处理。"
@@ -466,3 +591,106 @@ JSON格式示例：
             return f"{date_str} 的日程：\\n" + "\\n".join(tasks_info)
         else:
             return f"{date_str} 暂无安排的日程。"
+
+    def get_ai_generated_schedules(self) -> Dict[str, Any]:
+        """获取AI生成的时间表历史（供前端使用）"""
+        try:
+            import os
+            import glob
+
+            ai_schedules_dir = "ai_generated_schedules"
+
+            if not os.path.exists(ai_schedules_dir):
+                return {"schedules": [], "latest": None, "count": 0}
+
+            # 获取所有时间表文件
+            schedule_files = glob.glob(f"{ai_schedules_dir}/schedule_*.json")
+            schedule_files.sort(reverse=True)  # 按时间倒序
+
+            schedules = []
+            for file_path in schedule_files[:10]:  # 最近10个
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        schedule_data = json.load(f)
+                        schedules.append(
+                            {
+                                "filename": os.path.basename(file_path),
+                                "timestamp": schedule_data.get("metadata", {}).get(
+                                    "timestamp"
+                                ),
+                                "user_request": schedule_data.get("metadata", {}).get(
+                                    "user_request"
+                                ),
+                                "tasks_count": {
+                                    "daily": len(
+                                        schedule_data.get("processed_tasks", {}).get(
+                                            "daily_tasks", []
+                                        )
+                                    ),
+                                    "weekly": len(
+                                        schedule_data.get("processed_tasks", {}).get(
+                                            "weekly_tasks", []
+                                        )
+                                    ),
+                                },
+                            }
+                        )
+                except Exception as e:
+                    logger.error(f"读取时间表文件失败 {file_path}: {e}")
+
+            # 获取最新的时间表
+            latest_schedule = None
+            latest_file = f"{ai_schedules_dir}/latest_schedule.json"
+            if os.path.exists(latest_file):
+                try:
+                    with open(latest_file, "r", encoding="utf-8") as f:
+                        latest_schedule = json.load(f)
+                except Exception as e:
+                    logger.error(f"读取最新时间表失败: {e}")
+
+            return {
+                "schedules": schedules,
+                "latest": latest_schedule,
+                "count": len(schedule_files),
+            }
+
+        except Exception as e:
+            logger.error(f"获取AI生成的时间表历史失败: {e}")
+            return {"schedules": [], "latest": None, "count": 0, "error": str(e)}
+
+    def export_schedule_for_frontend(
+        self, include_history: bool = True
+    ) -> Dict[str, Any]:
+        """导出适合前端使用的完整时间表数据"""
+        try:
+            # 获取当前系统中的所有数据
+            stats = self.time_service.get_statistics()
+            current_time = self.time_service.get_current_time_info()
+
+            # 准备导出数据
+            export_data = {
+                "system_info": {
+                    "current_time": current_time,
+                    "statistics": stats,
+                    "export_timestamp": current_time["current_datetime"],
+                },
+                "time_management_data": self.time_service.export_json(),
+                "ai_generated_history": (
+                    self.get_ai_generated_schedules() if include_history else None
+                ),
+            }
+
+            # 保存导出数据
+            export_filename = (
+                f"frontend_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            )
+            with open(export_filename, "w", encoding="utf-8") as f:
+                json.dump(export_data, f, ensure_ascii=False, indent=2)
+
+            logger.info(f"前端数据已导出到: {export_filename}")
+
+            return export_data
+
+        except Exception as e:
+            logger.error(f"导出前端数据失败: {e}")
+            return {"error": str(e)}
