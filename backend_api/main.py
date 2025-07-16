@@ -4,7 +4,7 @@ AI 时间管理系统 - 后端 API 服务
 基于 FastAPI 的后端 API，为前端提供完整的时间管理功能接口。
 不修改现有 AI 代码，通过接口方式提供服务。
 
-作者：AI Assistant
+作者：Fuxuan
 日期：2025-07-16
 """
 
@@ -293,16 +293,16 @@ async def create_daily_task(task_data: DailyTaskCreate):
 
 
 @app.get("/api/tasks/daily")
-async def get_daily_tasks(date_str: str):
+async def get_daily_tasks(date: str):
     """获取指定日期的日任务"""
     if not time_service:
         raise HTTPException(status_code=500, detail="时间管理服务未初始化")
 
     try:
-        tasks = time_service.get_daily_tasks(date_str)
+        tasks = time_service.get_daily_tasks(date)
         return {
             "success": True,
-            "date": date_str,
+            "date": date,
             "tasks": [task.dict() for task in tasks],
             "count": len(tasks),
         }

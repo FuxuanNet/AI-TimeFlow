@@ -10,7 +10,7 @@ pip install fastapi uvicorn pydantic
 启动服务：
 uvicorn backend_main:app --host 0.0.0.0 --port 8000 --reload
 
-作者：AI Assistant
+作者：Fuxuan
 日期：2025-07-16
 """
 
