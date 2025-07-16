@@ -1,5 +1,15 @@
 // AI 时间管理系统 - 前端 JavaScript
 
+// 全局错误处理
+window.addEventListener('error', (e) => {
+    console.error('全局错误:', e.error);
+    console.error('错误堆栈:', e.error?.stack);
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+    console.error('未处理的 Promise 拒绝:', e.reason);
+});
+
 class AITimeManager {
     constructor() {
         this.apiBaseUrl = 'http://localhost:8000';
@@ -26,10 +36,17 @@ class AITimeManager {
         document.getElementById('weeklyBtn').addEventListener('click', () => this.showPage('weekly'));
 
         // 聊天功能
-        document.getElementById('sendBtn').addEventListener('click', () => this.sendMessage());
+        document.getElementById('sendBtn').addEventListener('click', (e) => {
+            console.log('发送按钮被点击'); // 调试日志
+            e.preventDefault();
+            e.stopPropagation();
+            this.sendMessage();
+        });
         document.getElementById('chatInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
+                console.log('Enter 键被按下'); // 调试日志
                 e.preventDefault();
+                e.stopPropagation();
                 this.sendMessage();
             }
         });
@@ -136,15 +153,23 @@ class AITimeManager {
 
     // 发送消息
     async sendMessage() {
+        console.log('sendMessage 函数被调用'); // 调试日志
+        
         const input = document.getElementById('chatInput');
         const message = input.value.trim();
         
-        if (!message || this.isLoading) return;
+        console.log('输入消息:', message); // 调试日志
+        
+        if (!message || this.isLoading) {
+            console.log('消息为空或正在加载中，返回');
+            return;
+        }
 
         // 清空输入框
         input.value = '';
         
         // 显示用户消息
+        console.log('添加用户消息到界面'); // 调试日志
         this.addMessage(message, 'user');
         
         // 显示加载状态
@@ -163,10 +188,24 @@ class AITimeManager {
             });
 
             const data = await response.json();
+            console.log('API 响应:', data); // 调试日志
 
             if (data.success) {
+                let aiResponse = data.response;
+                
+                // 如果响应是 JSON 格式的字符串，尝试解析它
+                try {
+                    const parsedResponse = JSON.parse(aiResponse);
+                    if (parsedResponse.response) {
+                        aiResponse = parsedResponse.response;
+                    }
+                } catch (e) {
+                    // 如果不是 JSON，就使用原始响应
+                    console.log('响应不是 JSON 格式，使用原始文本');
+                }
+
                 // 显示 AI 响应
-                this.addMessage(data.response, 'bot', data.tools_used);
+                this.addMessage(aiResponse, 'bot', data.tools_used);
                 
                 // 如果使用了工具，显示工具面板
                 if (data.tools_used && data.tools_used.length > 0) {
@@ -176,11 +215,19 @@ class AITimeManager {
                 // 刷新数据（AI 可能已修改了计划）
                 this.loadCurrentData();
             } else {
+                console.error('API 返回错误:', data);
                 this.addMessage('抱歉，处理您的请求时出现了错误。', 'bot');
             }
         } catch (error) {
             console.error('发送消息失败:', error);
-            this.addMessage('连接服务器失败，请检查网络连接。', 'bot');
+            
+            // 添加更详细的错误信息
+            let errorMessage = '连接服务器失败，请检查：\n';
+            errorMessage += '1. 后端服务是否启动（http://localhost:8000）\n';
+            errorMessage += '2. 网络连接是否正常\n';
+            errorMessage += '3. 浏览器控制台是否有 CORS 错误';
+            
+            this.addMessage(errorMessage, 'bot');
         } finally {
             this.setLoading(false);
         }
@@ -188,7 +235,11 @@ class AITimeManager {
 
     // 添加消息到聊天界面
     addMessage(content, type, tools = []) {
+        console.log('addMessage 被调用:', { content, type, tools }); // 调试日志
+        
         const messagesContainer = document.getElementById('chatMessages');
+        console.log('消息容器:', messagesContainer); // 调试日志
+        
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${type}-message`;
 
@@ -206,7 +257,7 @@ class AITimeManager {
 
         messageDiv.innerHTML = `
             <div class="message-content">
-                <strong>${type === 'user' ? '您' : 'AI 助手'}:</strong> ${content}
+                <strong>${type === 'user' ? '您' : 'AI 助手'}:</strong> ${content.replace(/\n/g, '<br>')}
                 ${toolsHtml}
             </div>
             <div class="message-time">${currentTime}</div>

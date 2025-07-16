@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 时间管理系统</title>
+    <title>AI 时间管理系统 - WebSocket 版</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <!-- 头部导航 -->
-        <header class="header">
-            <h1>🤖 AI 时间管理系统</h1>
-            <div class="nav-buttons">
-                <button id="chatBtn" class="nav-btn active">💬 AI 对话</button>
-                <button id="dailyBtn" class="nav-btn">📅 日计划</button>
-                <button id="weeklyBtn" class="nav-btn">📊 周计划</button>
+        <!-- 顶部导航 -->
+        <nav class="top-nav">
+            <div class="nav-left">
+                <h1>🤖 AI 时间管理助手</h1>
             </div>
-        </header>
+            <div class="nav-right">
+                <div id="connectionStatus" class="connection-status offline">离线</div>
+            </div>
+        </nav>
+
+        <!-- 导航栏 -->
+        <nav class="nav-bar">
+            <button id="chatBtn" class="nav-btn active">💬 AI 对话</button>
+            <button id="dailyBtn" class="nav-btn">📅 日计划</button>
+            <button id="weeklyBtn" class="nav-btn">📊 周计划</button>
+        </nav>
 
         <!-- 主要内容区域 -->
         <main class="main-content">
@@ -24,9 +31,9 @@
             <div id="chatPage" class="page active">
                 <div class="chat-container">
                     <div class="chat-header">
-                        <h2>与 AI 助手对话</h2>
-                        <div class="status-indicator">
-                            <span id="connectionStatus" class="status offline">离线</span>
+                        <h2>💬 与 AI 助手对话</h2>
+                        <div class="connection-info">
+                            <span id="connectionStatus2" class="connection-status offline">WebSocket: 离线</span>
                         </div>
                     </div>
                     
@@ -85,7 +92,7 @@
                         <h2>📊 周计划表</h2>
                         <div class="week-controls">
                             <button id="prevWeek" class="date-btn">←</button>
-                            <span id="weekRange">第 1 周</span>
+                            <span id="weekSelector" class="week-display">第 1 周</span>
                             <button id="nextWeek" class="date-btn">→</button>
                             <button id="currentWeekBtn" class="today-btn">本周</button>
                         </div>
@@ -94,7 +101,7 @@
                     <div class="schedule-content">
                         <div id="weeklyTasks" class="tasks-container">
                             <div class="no-tasks">
-                                <p>📋 当前周没有安排任务</p>
+                                <p>📝 当前周没有安排任务</p>
                                 <p>您可以通过 AI 对话来添加任务</p>
                             </div>
                         </div>
@@ -103,23 +110,18 @@
             </div>
         </main>
 
-        <!-- 工具调用显示 -->
+        <!-- 工具面板 -->
         <div id="toolsPanel" class="tools-panel hidden">
             <div class="tools-header">
                 <h3>🔧 AI 调用的工具</h3>
                 <button id="closeToolsBtn" class="close-btn">×</button>
             </div>
-            <div id="toolsList" class="tools-list"></div>
-        </div>
-
-        <!-- 加载指示器 -->
-        <div id="loadingIndicator" class="loading-indicator hidden">
-            <div class="spinner"></div>
-            <p>AI 正在思考中...</p>
+            <div id="toolsList" class="tools-list">
+                <!-- 工具列表将在这里动态显示 -->
+            </div>
         </div>
     </div>
 
-    <!-- 引入 JavaScript -->
-    <script src="app.js"></script>
+    <script src="app_ws.js"></script>
 </body>
 </html>

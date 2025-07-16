@@ -8,13 +8,20 @@ AI 时间管理系统 - 后端 API 服务
 日期：2025-07-16
 """
 
-from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi import (
+    FastAPI,
+    HTTPException,
+    BackgroundTasks,
+    WebSocket,
+    WebSocketDisconnect,
+)
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
 import asyncio
 import sys
 import os
+import json
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from pydantic import BaseModel
@@ -341,16 +348,16 @@ async def create_weekly_task(task_data: WeeklyTaskCreate):
 
 
 @app.get("/api/tasks/weekly")
-async def get_weekly_tasks(week_number: int):
+async def get_weekly_tasks(week: int):
     """获取指定周的周任务"""
     if not time_service:
         raise HTTPException(status_code=500, detail="时间管理服务未初始化")
 
     try:
-        tasks = time_service.get_weekly_tasks(week_number)
+        tasks = time_service.get_weekly_tasks(week)
         return {
             "success": True,
-            "week_number": week_number,
+            "week_number": week,
             "tasks": [task.dict() for task in tasks],
             "count": len(tasks),
         }
@@ -453,6 +460,121 @@ async def get_time_info():
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"获取时间信息失败: {str(e)}")
+
+
+# ==================== WebSocket 连接管理 ====================
+
+
+class ConnectionManager:
+    """WebSocket 连接管理器"""
+
+    def __init__(self):
+        self.active_connections: List[WebSocket] = []
+
+    async def connect(self, websocket: WebSocket):
+        await websocket.accept()
+        self.active_connections.append(websocket)
+        print(f"WebSocket 连接建立，当前连接数: {len(self.active_connections)}")
+
+    def disconnect(self, websocket: WebSocket):
+        if websocket in self.active_connections:
+            self.active_connections.remove(websocket)
+        print(f"WebSocket 连接断开，当前连接数: {len(self.active_connections)}")
+
+    async def send_personal_message(self, message: str, websocket: WebSocket):
+        await websocket.send_text(message)
+
+    async def broadcast(self, message: str):
+        for connection in self.active_connections:
+            try:
+                await connection.send_text(message)
+            except:
+                # 如果发送失败，移除该连接
+                self.disconnect(connection)
+
+
+manager = ConnectionManager()
+
+
+@app.websocket("/ws/chat")
+async def websocket_endpoint(websocket: WebSocket):
+    """WebSocket 聊天端点"""
+    await manager.connect(websocket)
+
+    try:
+        # 发送欢迎消息
+        welcome_message = {
+            "type": "system",
+            "message": "WebSocket 连接已建立",
+            "timestamp": datetime.now().isoformat(),
+        }
+        await manager.send_personal_message(json.dumps(welcome_message), websocket)
+
+        while True:
+            # 接收消息
+            data = await websocket.receive_text()
+            message_data = json.loads(data)
+
+            print(f"收到 WebSocket 消息: {message_data}")
+
+            # 处理聊天消息
+            if message_data.get("type") == "chat":
+                user_message = message_data.get("message", "")
+                session_id = message_data.get("session_id", "default")
+
+                if user_message.strip():
+                    try:
+                        # 发送用户消息确认
+                        user_confirm = {
+                            "type": "user_message",
+                            "message": user_message,
+                            "timestamp": datetime.now().isoformat(),
+                        }
+                        await manager.send_personal_message(
+                            json.dumps(user_confirm), websocket
+                        )
+
+                        # 发送处理中状态
+                        processing = {
+                            "type": "processing",
+                            "message": "AI 正在思考中...",
+                            "timestamp": datetime.now().isoformat(),
+                        }
+                        await manager.send_personal_message(
+                            json.dumps(processing), websocket
+                        )
+
+                        # 调用 AI 处理
+                        result = await ai_agent.process_user_request(user_message)
+
+                        # 发送 AI 响应
+                        ai_response = {
+                            "type": "ai_response",
+                            "message": result,
+                            "tools_used": [],  # process_user_request 返回字符串，工具信息在内部处理
+                            "timestamp": datetime.now().isoformat(),
+                        }
+                        await manager.send_personal_message(
+                            json.dumps(ai_response), websocket
+                        )
+
+                    except Exception as e:
+                        # 发送错误消息
+                        error_response = {
+                            "type": "error",
+                            "message": f"处理消息时出错: {str(e)}",
+                            "timestamp": datetime.now().isoformat(),
+                        }
+                        await manager.send_personal_message(
+                            json.dumps(error_response), websocket
+                        )
+
+    except WebSocketDisconnect:
+        manager.disconnect(websocket)
+        print("WebSocket 连接正常断开")
+    except Exception as e:
+        print(f"WebSocket 错误: {e}")
+        manager.disconnect(websocket)
 
 
 # ==================== 应用启动信息 ====================

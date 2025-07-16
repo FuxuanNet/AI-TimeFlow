@@ -226,6 +226,19 @@ class TimeManagementService:
         """获取指定周的计划"""
         return self.data.weekly_schedules.get(week_number)
 
+    def get_weekly_tasks(self, week_number: int) -> List[WeeklyTask]:
+        """获取指定周的任务列表"""
+        try:
+            weekly_schedule = self.get_weekly_schedule(week_number)
+            if weekly_schedule:
+                return weekly_schedule.tasks
+            else:
+                logger.info(f"第{week_number}周暂无计划")
+                return []
+        except Exception as e:
+            logger.error(f"获取第{week_number}周任务失败：{e}")
+            return []
+
     def get_date_range_schedules(
         self, start_date: str, end_date: str
     ) -> Dict[str, DailySchedule]:

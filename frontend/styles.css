@@ -492,6 +492,97 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+/* 连接状态样式 */
+.connection-status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    min-width: 50px;
+    text-align: center;
+}
+
+.connection-status.online {
+    background-color: #4caf50;
+    color: white;
+}
+
+.connection-status.offline {
+    background-color: #f44336;
+    color: white;
+}
+
+.connection-status.connecting {
+    background-color: #ff9800;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+.connection-status.error {
+    background-color: #9c27b0;
+    color: white;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-bottom: 20px;
+}
+
+.nav-left h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.connection-info {
+    font-size: 14px;
+}
+
+/* 错误消息样式 */
+.message.error-message {
+    background-color: #ffebee;
+    border-left: 4px solid #f44336;
+}
+
+.message.error-message .message-content {
+    color: #c62828;
+}
+
+/* 系统消息样式 */
+.message.system-message {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.message.system-message .message-content {
+    color: #1565c0;
+    font-style: italic;
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .container {

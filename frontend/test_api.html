@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>测试 API 响应</h1>
+    <button onclick="testAPI()">测试 API</button>
+    <div id="result"></div>
+
+    <script>
+        async function testAPI() {
+            try {
+                const response = await fetch('http://localhost:8000/api/chat/message', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: '你好',
+                        session_id: 'test'
+                    })
+                });
+
+                const data = await response.json();
+                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                console.log('API 响应:', data);
+            } catch (error) {
+                console.error('错误:', error);
+                document.getElementById('result').innerHTML = '错误: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>
